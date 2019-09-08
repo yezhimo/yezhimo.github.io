@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="yezhimo的个人博客">
 <meta property="og:description" content="安装 nodejs  安装 git  安装Hexo  npm i -g hexo-cli   初始化一个新的博客  hexo init   安装依赖  npm i   开启本地服务器  hexo s hexo s -p 5000   输入 地址查看博客  http://127.0.0.1:4000   写博客  把写好的 markdown 文件，存放到 /source/_posts 文件夹 中即">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-07T17:23:58.786Z">
+<meta property="og:updated_time" content="2019-09-08T04:34:42.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo搭建博客">
 <meta name="twitter:description" content="安装 nodejs  安装 git  安装Hexo  npm i -g hexo-cli   初始化一个新的博客  hexo init   安装依赖  npm i   开启本地服务器  hexo s hexo s -p 5000   输入 地址查看博客  http://127.0.0.1:4000   写博客  把写好的 markdown 文件，存放到 /source/_posts 文件夹 中即">
@@ -126,53 +126,50 @@
 </li>
 <li><p>输入 地址查看博客</p>
 <ul>
-<li><a href="http://127.0.0.1:4000" target="_blank" rel="noopener">http://127.0.0.1:4000</a></li>
+<li><code>http://127.0.0.1:4000</code></li>
 </ul>
 </li>
 <li><p>写博客</p>
 <ul>
-<li>把写好的 markdown 文件，存放到 <code>/source/_posts</code> 文件夹 中即可</li>
+<li>把写好的 <code>markdown</code> 文件，存放到 <code>/source/_posts</code> 文件夹 中即可</li>
 </ul>
 </li>
 <li><p>配置 NexT 主题（可选）</p>
 <ul>
-<li>NexT 主题官方文档： [<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">http://theme-next.iissnan.com/</a></li>
+<li>NexT 主题官方文档： [<a href="http://theme-next.iissnan.com]" target="_blank" rel="noopener">http://theme-next.iissnan.com]</a></li>
 </ul>
 </li>
 <li><p>完成部署GitHub</p>
 <ul>
-<li>每个 Github 账户都可以创建一个 <code>YourName.github.io</code> 的仓库，</li>
-<li>这个仓库的 master 分支是可以直接使用 <code>YourName.github.io</code> 在网络中访问的</li>
-<li>我们可以利用 Github 的这个功能来进行静态页面的展示。</li>
-<li>有两种部署的方式，一种是手动部署，一种是使用 hexo 命令行部署</li>
-</ul>
+<li><p>每个 Github 账户都可以创建一个 <code>YourName.github.io</code> 的仓库，</p>
 </li>
+<li><p>这个仓库的 master 分支是可以直接使用 <code>YourName.github.io</code> 在网络中访问的</p>
+</li>
+<li><p>我们可以利用 Github 的这个功能来进行静态页面的展示。</p>
+</li>
+<li><p>有两种部署的方式，一种是手动部署，一种是使用 hexo 命令行部署</p>
+<ul>
 <li><p>手动部署</p>
 <ol>
-<li><p>清空之前生成的博客文件</p>
-<ul>
+<li>清空之前生成的博客文件<ul>
 <li><code>hexo clean</code></li>
 <li>如果服务器开启中，可以使用 <code>Ctrl + c</code> 停止</li>
 </ul>
 </li>
-<li><p>生成博客文件</p>
-<ul>
+<li>生成博客文件<ul>
 <li><code>hexo g</code></li>
 </ul>
 </li>
-<li><p>进入 <code>public</code> 文件夹中，开启 bash 黑窗</p>
-<ul>
+<li>进入 <code>public</code> 文件夹中，开启 bash 黑窗<ul>
 <li>输入<code>git init</code> 初始化仓库，并使用 add 和 commit 提交</li>
 </ul>
 </li>
-<li><p>使用 git push 命令推送到 Github 仓库</p>
-<ul>
+<li>使用 git push 命令推送到 Github 仓库<ul>
 <li><code>git push https://github.com/YourName/YourName.github.io.git master --force</code></li>
 <li><code>注意后面需要加上 --force 强制覆盖</code></li>
 </ul>
 </li>
-<li><p>在浏览器输入 <code>YourName.github.io</code> 来访问你的博客</p>
-</li>
+<li>在浏览器输入 <code>YourName.github.io</code> 来访问你的博客</li>
 </ol>
 </li>
 <li><p>使用 hexo 命令部署</p>
@@ -208,36 +205,30 @@
 </li>
 </ol>
 </li>
-<li><p>总结常用命令</p>
-<ul>
-<li><p><code>hexo clean</code> </p>
-<ul>
-<li>清空 ( <code>hexo generate</code> ) 生成的博客</li>
 </ul>
 </li>
-<li><p><code>hexo g</code> （<code>hexo generate</code>） </p>
+</ul>
+</li>
+<li><p>总结常用命令</p>
 <ul>
+<li><code>hexo clean</code> <ul>
+<li>清空 (<code>hexo generate</code>) 生成的博客</li>
+</ul>
+</li>
+<li><code>hexo g</code> (<code>hexo generate</code>)<ul>
 <li>生成博客文件</li>
 </ul>
 </li>
-<li><p><code>hexo s</code> （<code>hexo server</code>）</p>
-<ul>
+<li><code>hexo s</code> (<code>hexo server</code>)<ul>
 <li>启动本地服务器</li>
 </ul>
 </li>
-<li><p><code>hexo d</code> （<code>hexo deploy</code>）</p>
-<ul>
+<li><code>hexo d</code> (<code>hexo deploy</code>)<ul>
 <li>按照配置好的_config.yml文件，完成部署</li>
 </ul>
 </li>
-<li><p><code>hexo new “我的新帖子”</code></p>
-<ul>
+<li><code>hexo new “我的新帖子”</code><ul>
 <li>创建一个新帖子</li>
-</ul>
-</li>
-<li><p><code>hexo generate</code></p>
-<ul>
-<li>生成静态文件</li>
 </ul>
 </li>
 </ul>
@@ -257,11 +248,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/09/07/frist/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/09/08/开发工具/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            who?
+            开发工具介绍
           
         </div>
       </a>
@@ -269,8 +260,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2018/09/08/html/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">HTML笔记</div>
+      <a href="/2019/09/07/AJAX笔记/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">AJAX笔记</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -319,7 +310,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发流程/">开发流程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简历/">简历</a></li></ul>
     </div>
   </div>
 
@@ -344,7 +335,15 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
-            <a href="/2019/09/07/frist/">who?</a>
+            <a href="/2019/09/08/markdown笔记/">markdown笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/08/项目开发流程/">项目开发流程</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/08/开发工具/">开发工具介绍</a>
           </li>
         
           <li>
@@ -352,7 +351,7 @@ gitment.render('gitmentContainer')
           </li>
         
           <li>
-            <a href="/2018/09/08/html/">HTML笔记</a>
+            <a href="/2019/09/07/AJAX笔记/">AJAX笔记</a>
           </li>
         
       </ul>
