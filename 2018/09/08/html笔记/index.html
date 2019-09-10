@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="yezhimo的个人博客">
 <meta property="og:description" content="什么是html  超文本标记语言 (Hyper Text Markup Language) 是一种标记语言 (markup language) 标记语言是一套标记标签 (markup tag) HTML 使用标记标签来描述网页 HTML5中的文档类型 html:5 html:xt   xhtml 1.0 html:4s    html 4.01   字符设定 &amp;lt;meta http-equi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-08T05:29:22.455Z">
+<meta property="og:updated_time" content="2019-09-10T16:54:03.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML笔记">
 <meta name="twitter:description" content="什么是html  超文本标记语言 (Hyper Text Markup Language) 是一种标记语言 (markup language) 标记语言是一套标记标签 (markup tag) HTML 使用标记标签来描述网页 HTML5中的文档类型 html:5 html:xt   xhtml 1.0 html:4s    html 4.01   字符设定 &amp;lt;meta http-equi">
@@ -119,7 +119,7 @@
 </ul>
 </li>
 <li><p>html文档结构</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 文档声明 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>页面标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 文档声明 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>页面标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 文档的主体 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>标签语义化</p>
 <ul>
@@ -459,7 +459,8 @@
 <li><p>分享标签</p>
 <ul>
 <li><code>embed</code><ul>
-<li>src</li>
+<li>src<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">src</span>=<span class="string">"http://player.youku.com/player.php/sid/XMTI4MzM2MDIwOA==/v.swf"</span> <span class="attr">allowFullScreen</span>=<span class="string">"true"</span> <span class="attr">quality</span>=<span class="string">"high"</span> <span class="attr">width</span>=<span class="string">"480"</span> <span class="attr">height</span>=<span class="string">"400"</span> <span class="attr">align</span>=<span class="string">"middle"</span> <span class="attr">allowScriptAccess</span>=<span class="string">"always"</span> <span class="attr">type</span>=<span class="string">"application/x-shockwave-flash"</span>&gt;</span><span class="tag">&lt;/<span class="name">embed</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
@@ -857,6 +858,26 @@
 </li>
 </ul>
 </li>
+<li>操作class<ul>
+<li>dom.classList<ul>
+<li>add 添加</li>
+<li>remove  移除</li>
+<li>contains 判断</li>
+<li>toggle  切换</li>
+</ul>
+</li>
+<li>h5 自定义属性<ul>
+<li>声明属性的时候 data-开头</li>
+<li>js dom.dataset.属性名<ul>
+<li>可获取</li>
+<li>可以设置</li>
+<li>可修改</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -866,7 +887,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/08/html笔记/" data-id="ck0d4lotv000om8uocv61ipem" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/08/html笔记/" data-id="ck0e3lfdc000ofsuos79d81t1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
