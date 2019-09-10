@@ -87,40 +87,194 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>oldTime： 2017-10-28</li>
-<li>start： 2019-09-06</li>
-<li>update：2019-09-09</li>
-<li>``</li>
-</ul>
-<ol>
-<li><p>你在你的玫瑰花身上耗费的时间使得你的玫瑰花变得如此重要。</p>
-<!-- ---《小王子》 -->
-</li>
-<li><p>如果你需要我，那我就留下来。 </p>
-</li>
-</ol>
-<!-- 1. 曾在孤独一人的世界里生活过，感受过世界上最可怕的寒冷，所以即使在最炽烈的阳光中，都带着微微的凉意。 ——江南 《龙族》 -->
-<!-- 2. 这一路上我们将不彼此抛弃，不彼此出卖，直到死亡的尽头。---《龙族》 -->
-<!-- 1. 有的爱，可能还没开始，却就要结束了。 -->
-<!-- 1. 不管你变成什么模样，在真正爱你的人眼里，你看到的永远是自己最美的时刻。 -->
-<!-- 3. 命运这种东西,生来就是要被踏于足下的,如果你还未有力量反抗它,只需怀着勇气等待。---《龙族》 -->
-<!-- 1. 你没有如期归来,而这正是离别的意义。 --- 《白日梦》-北岛 -->
-
-<!-- 2. 我重临世界之日,诸逆臣皆当死去.  --- 《龙族》-江南 -->
-
-<!-- 3. 仙河东去,长生尽. ---《完美世界》-辰东 -->
-
-<!-- 1. 每个人心里都住着魔鬼，幸福是它的牢笼，当一切幸福都化作泡影，魔鬼就会冲破牢笼高唱着血腥的圣歌浮现。那时候，绝望的人将所向无敌。 -->
-
-<!-- http://www.360doc.com/content/16/0813/14/35032385_582933925.shtml -->
+        <script src=/js/crypto-js.js></script>
+<script>
+function doDecrypt (pwd, onError) {
+	console.log('in doDecrypt');
+	const txt = document.getElementById('enc_content').innerHTML;
+	let plantext;
+	try {
+		const bytes = CryptoJS.AES.decrypt(txt, pwd);
+		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+	} catch(err) {
+		if(onError) {
+			onError(err);
+		}
+		return;
+	}
+	document.getElementById('enc_content').innerHTML = plaintext;
+	document.getElementById('enc_content').style.display = 'block';
+	document.getElementById('enc_passwd').style.display = 'none';
+	if(typeof MathJax !== 'undefined') {
+		MathJax.Hub.Queue(
+			['resetEquationNumbers', MathJax.InputJax.TeX],
+			['PreProcess', MathJax.Hub],
+			['Reprocess', MathJax.Hub]
+		);
+	}
+}
+</script>
+<div id="enc_content" style="display:none">U2FsdGVkX1+9ftR1pyZkhwL+JTG7pbjpTg+ijcMrOwML2lColVA+B5VhuJA0NUQVbqk9OWclKE9nTQD5Lw1Gk9LznNN4smyHuxULUr1eq8LruPEY2YzFW9oZXEiN1uESmDsCC1SiRNMMgU2nESSyofayImcPPHzWRHFUgty3G4W6AY+zRgXwTCkiOlDGqe1qDiod0nxioJrYtNianl/K20c8HbOKUaA+yPHOXeZJFfMfk3L9t3ibxwuY9rWMpIy9R2dPBjazxtNOxuZ4Ituc77eSg6pwlEC+SX0xxcQs9oFdHZcaDaYhG1Hwo/se5jSeTY/ks+/zT/eB3oPKlR5ODDz65d708XHOQ+CK6h5SJnlYHyhrjVBLJniYlbK8FQhU0LUrejQ71lAryQPLm8YjPH877vfHtvhQew6ejMilQTiA2S6BY5qEbK/9WSA8QzUyUiCi9vIlU1uZ7pLj0zly52YVjYX9Z5U2n0w3h+azKhnHGmQFM37eWzuY8246Jb+tE7ZXOscxq9JEjho0zNetPe9zNVe6ZXP6tqeFbAd+ftgf1QigBgbd/sIvmffmEIrA6l0Ro4wa0zGcjeh7j2++XuAp02CyN2CnLyMQaAOKtNmSQy/3ydoU+J9t07TRNBEvwY7Qik5YRyCYdFglEC8RHQ8klQTbcTjLarU8P4Lc2umsZEoV7EmF/KzD6DWfHAE9APsCOLOh4En0enw3BW68f591fQzhydgnuwsOAeLwFCa6aKKL+JIWiLuCVsLv1QuWVb4iqR857MyRF5uSdv+7cC5nh1aV7oqIkU72diB0i4afTvUrkDDkgkmw+emt3Z7QOF/b6Rc9RMYLGysjR4CYuquOl7StdmRoydI0WGeu7SnV5Pd3V2aRj4B5pPaOObzON1RKNnwlZNAu0U1LbxMnP1qsFnQXJXccj16H3Caf73D4jHk4h2dZB7Kq762uNfanZm4U7tKXGdfySePezYSgU7ys/hX9hx5P081RZ3iCjBGwQoxD2/ikUTG86Vi6UrP3psOHq+VPDaDURGaWeOExVutfTOMsQ4mgSl0F/B2InoQXgbqd10QCx9UBfYJMg5e9F3p7x7sIsGQDgbN4zLqVMmqL/Aq3uOWm0SlpduqRFC4HO3/pagpIlNkOKuzFyu3rK3uJlAmrh3i6mKqlN3+FOWSjSzgDYuUmD05oFfH/LQqMGCphDyWaCDM+oTPE2OvHnp/Nng8Q3U6HVLAE5T6YEgnsPSz0tATcoPHPXOMwO3drM4AETLfbbiJQBT3BI0OZPJfbXCs9UEyMNw2nQmvO8unZ429y64qtnGMbVM6fZ8WAYr0wXomIimdlGiMkOWzlzMhS9yM16NTx2UcsS2N/j5CcfiFickzcZTFuep5XQZIZjM83PIAIGJTIhLg/E+on7XFj3mlsPSRfDCQ/0wmQKI+iCGZpyGGE6WfEAU0exV3UKecHmenej70ws5TfJkuiKhAS3Vugj/wNtdmnQgtbhdlf6HRwzpw3RCbQjufq99xD7FAxasSiGu0vROsS+h2HNymhfeGjyh8jfO2wkrs/YHEqgEaoSLvqanuRPJsKhqfkIjZ7kPko5HLwb+rDMzXn86CPAEf76YNm7SFBjlR5BrDgrFy02VuFKyQ085MeZMU3Osuee650v4Ta4soIiq6gKVXh8BS5nTfKFtoYVA8sptLZAImiICnHlkEm2nKvcpLU+5xhiO4lHNDIVds2KrkB+ektSxprmXnkuk4YNCri8/NPCiJZ8Awnh0C/66eMruABhduW5n1WwYmNKEYQsBAeRkAQvlC0pokwzRZstbrygGrusyHQW8M+2Veaf2IutshBdRkMpdoAy2kpKJzf/lFjpExXcvBIBcwymZK2k/DRWUEkbjOUS3PR3QXesbmBp3cutyvTo/dFt19kIPbSaltpHAbZGP2ij4cSYA4uYkgKBZBb2cANhPGqT/2EInj9/Vk=</div>
+<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
+<script>
+var onError = function(error) {
+	document.getElementById("enc_error").innerHTML = "password error!"
+};
+function decrypt() {
+var passwd = document.getElementById("enc_pwd_input").value;
+console.log(passwd);
+doDecrypt(passwd, onError);
+}
+</script>
+</div>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/09/frist/" data-id="ck0cf8p9g0000hguo7vbgvig5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/09/frist/" data-id="ck0d4loss0001m8uok8w43lfp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/情感/">情感</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js修改iframe内容" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/09/js修改iframe内容/" class="article-date">
+  <time datetime="2019-09-08T16:00:00.000Z" itemprop="datePublished">2019-09-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/09/js修改iframe内容/">js修改iframe内容</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一. js</p>
+<ol>
+<li><p>iframe子页面调用父页面js函数</p>
+<ul>
+<li>window.parent.a();</li>
+</ul>
+</li>
+<li><p>子页面取父页面中的标签</p>
+<ul>
+<li><p>window.parent.document.getElementById(“test”)</p>
+</li>
+<li><p>$(window.parent.document).contents().find(“test”)</p>
+</li>
+<li><p>在chrome 5+中，window.parent无法在file://协议中运行，但是发布了之后http://协议下是可以运行的。此方法支持ie、firefox浏览器。</p>
+</li>
+</ul>
+</li>
+<li><p>iframe父页面调用子页面js函数</p>
+<ul>
+<li>document.getElementById(‘iframe1’).contentWindow.b();</li>
+<li>document.getElementById(‘iframe1’).contentWindow.document.getElementsByClassName(“title-main”)[0]</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/09/js修改iframe内容/" data-id="ck0d4losz0004m8uok54ras0e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jq/">jq</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-markdown笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/08/markdown笔记/" class="article-date">
+  <time datetime="2019-09-07T16:00:00.000Z" itemprop="datePublished">2019-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/08/markdown笔记/">markdown笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>标题</p>
+ <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码高亮</p>
+<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">```  </span><br><span class="line">```css</span><br><span class="line">/* css代码 */</span><br><span class="line">    div &#123;</span><br><span class="line">        background-color: red;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js代码</span></span><br><span class="line">    changeRed()</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">changeRed</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'我是red'</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'哈哈哈'</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></code></pre></li>
+<li><p>图片</p>
+ <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">alt 属性文本</span>](<span class="link">http://static.runoob.com/images/runoob-logo.png</span>)  </span><br><span class="line">![<span class="string">alt 属性文本</span>](<span class="link">图片地址 "标题"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>链接</p>
+ <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">git官网:</span>](<span class="link">https://git-scm.com/</span>)   </span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">https:</span>//<span class="attr">git-scm.com</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列表</p>
+<ol>
+<li><p>无序列表</p>
+ <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>第一</span><br><span class="line"><span class="bullet">* </span>第二</span><br><span class="line"><span class="bullet">* </span>第三</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>第一</span><br><span class="line"><span class="bullet">- </span>第二</span><br><span class="line"><span class="bullet">- </span>第三</span><br><span class="line"></span><br><span class="line"><span class="bullet">+ </span>第一</span><br><span class="line"><span class="bullet">+ </span>第二</span><br><span class="line"><span class="bullet">+ </span>第三</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有序列表</p>
+ <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>第一</span><br><span class="line"><span class="bullet">2. </span>第二</span><br><span class="line"><span class="bullet">3. </span>第三</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列表嵌套</p>
+ <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">列表嵌套只需在子列表中的选项添加四个空格即可</span><br><span class="line"><span class="bullet">1. </span>第一</span><br><span class="line"><span class="bullet">    - </span>第一</span><br><span class="line"><span class="bullet">2. </span>第二</span><br><span class="line"><span class="bullet">    - </span>第二</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>表格</p>
+ <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string">表头</span>|<span class="string">表头</span>|<span class="string">表头</span>|</span><br><span class="line">|<span class="string">:---</span>|<span class="string">:--</span>|<span class="string">:---</span>|</span><br><span class="line">|<span class="string">内容</span>|<span class="string">内容</span>|<span class="string">内容</span>|</span><br><span class="line">|<span class="string">内容</span>|<span class="string">内容</span>|<span class="string">内容</span>|</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第二行分割表头和内容。</li>
+<li>有一个就行，为了对齐，多加了几个</li>
+<li>文字默认居左</li>
+<li>两边加：表示文字居中</li>
+<li>右边加：表示文字居右</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/08/markdown笔记/" data-id="ck0d4lot10005m8uobjfab8wa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
 
     </footer>
   </div>
@@ -202,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/08/开发工具/" data-id="ck0cf8p9v0004hguocdxh3wl8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/08/开发工具/" data-id="ck0d4lot30008m8uoh0l8mpnl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
@@ -248,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/08/项目开发流程/" data-id="ck0cf8p9z0008hguonvrpf5o0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/08/项目开发流程/" data-id="ck0d4lot50009m8uo4aymugy3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发流程/">开发流程</a></li></ul>
@@ -260,9 +414,9 @@
 
 
   
-    <article id="post-markdown笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-A-1.0---CSS/css" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/08/markdown笔记/" class="article-date">
+    <a href="/2019/09/08/A-1.0---CSS/css/" class="article-date">
   <time datetime="2019-09-07T16:00:00.000Z" itemprop="datePublished">2019-09-08</time>
 </a>
     
@@ -274,7 +428,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/08/markdown笔记/">markdown笔记</a>
+      <a class="article-title" href="/2019/09/08/A-1.0---CSS/css/">css笔记</a>
     </h1>
   
 
@@ -283,54 +437,596 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><p>标题</p>
- <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>代码高亮</p>
-<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">```  </span><br><span class="line">```css</span><br><span class="line">/* css代码 */</span><br><span class="line">    div &#123;</span><br><span class="line">        background-color: red;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js代码</span></span><br><span class="line">    changeRed()</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">changeRed</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'我是red'</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'哈哈哈'</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></code></pre></li>
-<li><p>图片</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">alt 属性文本</span>](<span class="link">http://static.runoob.com/images/runoob-logo.png</span>)  </span><br><span class="line">![<span class="string">alt 属性文本</span>](<span class="link">图片地址 "标题"</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>链接</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">git官网:</span>](<span class="link">https://git-scm.com/</span>)   </span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">https:</span>//<span class="attr">git-scm.com</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>列表</p>
-<ol>
-<li><p>无序列表</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>第一</span><br><span class="line"><span class="bullet">* </span>第二</span><br><span class="line"><span class="bullet">* </span>第三</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>第一</span><br><span class="line"><span class="bullet">- </span>第二</span><br><span class="line"><span class="bullet">- </span>第三</span><br><span class="line"></span><br><span class="line"><span class="bullet">+ </span>第一</span><br><span class="line"><span class="bullet">+ </span>第二</span><br><span class="line"><span class="bullet">+ </span>第三</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>有序列表</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>第一</span><br><span class="line"><span class="bullet">2. </span>第二</span><br><span class="line"><span class="bullet">3. </span>第三</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>列表嵌套</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">列表嵌套只需在子列表中的选项添加四个空格即可</span><br><span class="line"><span class="bullet">1. </span>第一</span><br><span class="line"><span class="bullet">    - </span>第一</span><br><span class="line"><span class="bullet">2. </span>第二</span><br><span class="line"><span class="bullet">    - </span>第二</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>表格</p>
- <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string">表头</span>|<span class="string">表头</span>|<span class="string">表头</span>|</span><br><span class="line">|<span class="string">:---</span>|<span class="string">:--</span>|<span class="string">:---</span>|</span><br><span class="line">|<span class="string">内容</span>|<span class="string">内容</span>|<span class="string">内容</span>|</span><br><span class="line">|<span class="string">内容</span>|<span class="string">内容</span>|<span class="string">内容</span>|</span><br></pre></td></tr></table></figure>
-
+<li><p>css 介绍</p>
 <ul>
-<li>第二行分割表头和内容。</li>
-<li>有一个就行，为了对齐，多加了几个</li>
-<li>文字默认居左</li>
-<li>两边加：表示文字居中</li>
-<li>右边加：表示文字居右</li>
+<li><p>作用</p>
+<ul>
+<li>设置HTML页面中的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局等外观显示样式</li>
 </ul>
+</li>
+<li><p>名字</p>
+<ul>
+<li>CSS样式表</li>
+<li>层叠样式表</li>
+<li>级联样式表</li>
+</ul>
+</li>
+<li><p>使用方式</p>
+<ul>
+<li><p>行内样式</p>
+<ul>
+<li><code>&lt;标签名 style=&quot;属性1:属性值1; 属性2:属性值2; 属性3:属性值3;&quot;&gt; 内容 &lt;/标签名&gt;</code></li>
+<li>书写方便，权重高,控制范围低，不方便维护</li>
+</ul>
+</li>
+<li><p>内嵌样式</p>
+<ul>
+<li>部分结构和样式相分离<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/CSS"</span>&gt;</span></span><br><span class="line">        选择器 &#123;属性1:属性值1; 属性2:属性值2; 属性3:属性值3;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>外链样式</p>
+<ul>
+<li>完全实现结构和样式相分离<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"CSS文件的路径"</span> <span class="attr">type</span>=<span class="string">"text/CSS"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- href：定义所链接外部样式表文件的URL，可以是相对路径，也可以是绝对路径。 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- type：定义所链接文档的类型，在这里需要指定为“text/CSS”，表示链接的外部文件为CSS样式表。 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- rel：定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>选择器</p>
+<ul>
+<li><p><code>选择器 与 { 之间必须包含空格。</code></p>
+</li>
+<li><p>通配符选择器</p>
+<ul>
+<li><code>*</code></li>
+<li>匹配页面中所有的元素</li>
+</ul>
+</li>
+<li><p>id选择器</p>
+<ul>
+<li><code>#</code></li>
+<li>元素的id值是唯一的 (相当于身份证)</li>
+</ul>
+</li>
+<li><p>类选择器</p>
+<ul>
+<li><code>.</code></li>
+<li>相当于人的名字</li>
+</ul>
+</li>
+<li><p>标签选择器 </p>
+</li>
+<li><p>后代选择器 <code>.red .blue</code></p>
+</li>
+<li><p>子代选择器 <code>.red&gt;.blue</code></p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>并集选择器 <code>.red , .blue</code></p>
+</li>
+<li><p>伪类选择器</p>
+<ul>
+<li><code>:link</code>  未访问的链接</li>
+<li><code>:visited</code> 已访问的链接</li>
+<li><code>:hover</code> 鼠标移动到链接上 </li>
+<li><code>:active</code> 选定的链接</li>
+<li><code>:link :visited只对a标签起作用</code></li>
+</ul>
+</li>
+<li><p>伪元素选择器</p>
+<ul>
+<li><code>::first-letter</code><ul>
+<li>文本的第一个单词或字</li>
+</ul>
+</li>
+<li><code>::first-line</code><ul>
+<li>文本第一行</li>
+</ul>
+</li>
+<li><code>::selection</code><ul>
+<li>可改变选中文本的样式；</li>
+</ul>
+</li>
+<li><code>::before</code></li>
+<li><code>::after</code></li>
+<li><code>::before和::after一定要配合content一起使用</code></li>
+</ul>
+</li>
+<li><p>结构(位置)伪类选择器</p>
+<ul>
+<li><code>:nth-child(n)</code><ul>
+<li>匹配属于其父元素的第 N 个子元素，不论元素的类型</li>
+</ul>
+</li>
+<li><code>:first-child</code><ul>
+<li>选取属于其父元素的首个子元素的指定选择器</li>
+</ul>
+</li>
+<li><code>:last-child</code><ul>
+<li>选取属于其父元素的最后一个子元素的指定选择器</li>
+</ul>
+</li>
+<li><code>:nth-last-child(n)</code><ul>
+<li>选择器匹配属于其元素的第 N 个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数。</li>
+</ul>
+</li>
+<li><code>n 可以是数字、关键词或公式</code></li>
+</ul>
+</li>
+<li><p>目标伪类选择器</p>
+<ul>
+<li><code>:target</code></li>
+<li>改变目标的样式</li>
+</ul>
+</li>
+<li><p>属性选择器 <code>input[type=&quot;password&quot;]</code></p>
+</li>
+<li><p>交集选择器  <code>p.red</code></p>
+<ul>
+<li>交集选择器中如果有标签选择器，标签选择器一定要写在最前面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>class和id的命名规则</p>
+<ul>
+<li>1.可以包含字母、数字、下划线、短横线</li>
+<li>2.不能以数字开头</li>
+<li>3.不能以短横线开头</li>
+<li>4.不能以单个短横线</li>
+<li>5.长名称或词组可以使用中横线来为选择器命名</li>
+<li>6.不建议使用“_”下划线来命名CSS选择器。</li>
+<li>建议：<ul>
+<li>1.使用有意义的单词</li>
+<li>2.使用驼峰命名法。oneTwo  userName</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>元素默认样式</p>
+<ul>
+<li>margin  定义外边距</li>
+<li>padding  定义内边距</li>
+<li>outline</li>
+<li>border</li>
+<li>color</li>
+<li>list-style</li>
+</ul>
+</li>
+<li><p>字体</p>
+<ul>
+<li>大小<ul>
+<li><code>font-size</code></li>
+</ul>
+</li>
+<li>文本颜色<ul>
+<li><code>color</code><ul>
+<li>颜色单词</li>
+<li>rgb</li>
+<li>rgba</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>字体粗细<ul>
+<li><code>font-weight</code><ul>
+<li>normal</li>
+<li>bold</li>
+<li>bolder</li>
+<li>lighter</li>
+<li>100~900（100的整数倍）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>字体<ul>
+<li><code>font-family</code><ul>
+<li><code>Microsoft YaHei</code> 微软雅黑</li>
+<li><code>Sim Sun</code> 宋体</li>
+</ul>
+</li>
+<li>Unicode字体</li>
+</ul>
+</li>
+<li>字体显示形式<ul>
+<li><code>font-style</code><ul>
+<li>normal</li>
+<li>italic 斜体</li>
+<li>oblique  倾斜的字体样式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>复合属性 <ul>
+<li><code>font:font-style font-weight font-size font-family;</code>   </li>
+<li>1.font-size和font-family的顺序不能打乱而且位置不能改变</li>
+<li>2.font-size和font-family一定不能少，其他的可以选</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文字居中</p>
+<ul>
+<li>水平对齐方式<ul>
+<li><code>text-align: center;</code><ul>
+<li>left：左对齐（默认值）</li>
+<li>right：右对齐</li>
+<li>center：居中对齐</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>行间距<ul>
+<li><code>line-height: 100%</code><ul>
+<li>像素px</li>
+<li>相对值em</li>
+<li>百分比%</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文本缩进</p>
+<ul>
+<li><code>text-indent</code><ul>
+<li>em</li>
+<li>px</li>
+<li>%</li>
+<li>负数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文本修饰线</p>
+<ul>
+<li><code>text-decoration</code><ul>
+<li>underline  定义文本下的一条线。下划线 也是我们链接自带的</li>
+<li>overline  定义文本上的一条线。</li>
+<li>line-through  定义穿过文本下的一条线</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文字间隔</p>
+<ul>
+<li><code>word-spacing</code> 单词间距<ul>
+<li>对于中文无效</li>
+<li>设置单词之间的间距</li>
+</ul>
+</li>
+<li><code>letter-spacing</code> 字间距<ul>
+<li>中文设置的每个字之间的间距</li>
+<li>英文单词设置每个字母之间的间距</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文字阴影</p>
+<ul>
+<li><code>text-shadow:水平位置 垂直位置 模糊距离 阴影颜色;</code></li>
+<li><code>text-shadow:20px 50px 5px rgba(255,0,0,.1);</code></li>
+<li>设置文字阴影的时候，水平位置和垂直位置一定不能少，其他可以省略 </li>
+<li>文字多阴影<ul>
+<li><code>text-shadow:2px 2px 5px blue,5px 5px 5px red;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>盒子阴影<br> /* box-shadow: h-shadow v-shadow blur spread color inset; */</p>
+<pre><code>/* 注意：盒子阴影设置的时候，水平距离和垂直距离是必须要设置，其他的可选 
+盒子阴影默认就是外部阴影outset，不需要设置，如果设置了反而是错误的。
+
+*/</code></pre></li>
+<li><p>背景</p>
+<ul>
+<li><p><code>background-color</code></p>
+</li>
+<li><p><code>background-image: url(./img/亚索.gif)</code></p>
+</li>
+<li><p><code>background-repeat: no-repeat;</code></p>
+<ul>
+<li>repeat : 　背景图像在纵向和横向上平铺（默认的）</li>
+<li>no-repeat : 　背景图像不平铺</li>
+<li>repeat-x : 　背景图像在横向上平铺</li>
+<li>repeat-y : 　背景图像在纵向平铺</li>
+</ul>
+</li>
+<li><p><code>background-position: 10px 20px;</code></p>
+<ul>
+<li>top | center | bottom | left | center | right </li>
+<li></li>
+</ul>
+</li>
+<li><p><code>background-attachment: fixed</code></p>
+<ul>
+<li>scroll : 　背景图像是随对象内容滚动</li>
+<li>fixed : 　背景图像固定 </li>
+</ul>
+</li>
+<li><p><code>background-size</code></p>
+<ul>
+<li>可以设置长度单位(px)或百分比（设置百分比时，参照盒子的宽高）</li>
+<li>设置为cover时，会自动调整缩放比例，保证图片始终填充满背景区域，如有溢出部分则会被隐藏。我们平时用的cover 最多</li>
+<li>设置为contain会自动调整缩放比例，保证图片始终完整显示在背景区域。</li>
+</ul>
+</li>
+<li><p><code>背景连写：background:background-image background-repeat background-position;</code></p>
+<ul>
+<li>background-image一定不能少，其他的可选，而且与顺序无关</li>
+</ul>
+</li>
+<li><p>多背景</p>
+<ul>
+<li><code>background:背景颜色 背景图片地址 背景平铺 背景滚动 背景位置</code></li>
+<li><code>background: url(./images/lock.png) no-repeat 200px 0,url(./images/phone.png) no-repeat,url(./images/user_fwfw.png) no-repeat,blue;</code></li>
+<li>如果设置多背景的时候，还需要设置背景颜色，背景颜色一定要放在最后面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>边框</p>
+<ul>
+<li>border</li>
+<li>border-radius</li>
+<li>border-radius: 0 0 100px 100px;</li>
+</ul>
+</li>
+<li><p>定位 position</p>
+<pre><code>1.静态定位 static
+2.相对定位  relative
+3.绝对定位  absolute
+4.固定定位 fixed
+
+z-index
+
+        1.静态定位：position:static
+    特点：遵循HTML的规则，所有元素的默认定位就是static
+2.相对定位：position:relative
+    特点:
+        1.不脱标，占原来的位置
+        2.相对与自身原来在标准流中的位置来做位置移动
+        3.不能改变元素的显示方式。
+        4.如果只设置了定位方式，而没有设置偏移量，那么元素的位置不变
+3.绝对定位：position：absolute
+    特点：
+        1.脱标，不占原来的位置
+        2.可以改变元素的显示方式
+        3.如果有包含关系：父辈元素都是静态定位，那么这个绝对定位的子元素以浏览器为参考标准来做位置的移动，如果父辈元素中有非静态定位的元素，那么这个绝对定位的子元素以这个非静态定位的父辈元素为参考来做位置的移动，如果父辈元素中都是给静态定位的元素，那么这个绝对定位的子元素遵循就近原则。
+        4.如果只设置了定位方式，而没有设置偏移量，那么元素的位置不变
+
+    注意：子绝父相
+
+4.固定定位：fixed
+    特点：
+        1.脱标，不占位置
+        2.如果这个元素固定定位，不管父辈元素是什么定位，这个固定定位的元素都是以浏览器为参考来做位置的移动</code></pre></li>
+<li><p>浮动</p>
+<ul>
+<li><p>float: left;<br>  /* 浮动的特点：</p>
+<pre><code>1.浮动的元素脱离标准流，不占原来的位置
+2.浮动的元素显示方式被改变
+3.浮动的元素以顶部对齐 
+4.如果浮动的元素前面是标准流的元素，那么这个浮动的元素只会跟在标准流元素的后面,除非通过人为去改变才能让他的位置发生变化
+
+5.当有包含关系的时候，如果子元素浮动，不会跑出父元素，除非人为改动
+*/
+    &lt;!-- 清除浮动的方式：</code></pre><p>  1.使用clear<br>  2.有包含关系，给父元素加高度<br>  3.给父盒子加overflow：hidden；<br>  4.额外标签法<br>  5.伪元素清除浮动(这是开发中最常用，这个必须记住，而且要手写出这段代码)<br>   –&gt;</p>
+</li>
+</ul>
+</li>
+<li><p>overflow</p>
+</li>
+<li><p>cursor</p>
+</li>
+<li><p>outline</p>
+</li>
+<li><p>resize (textarea)</p>
+</li>
+<li><p>vertical-align</p>
+</li>
+<li><p>word-break</p>
+</li>
+<li><p>文本省略号</p>
+<pre><code>div{
+    width: 200px;
+    height: 50px;
+    border:1px solid red;
+    /* word-break:keep-all; */
+    /* white-space: normal; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* text-overflow:clip; */
+    text-overflow:ellipsis;
+}
+/* 注意：如果需要实现一个文本超出盒子加上省略号的效果，我们使用text-overflow，但是一定要配合:white-space:nowrap和overflow:hidden一起使用才能实现效果 */</code></pre></li>
+<li><p>字体图标</p>
+</li>
+<li><p>css使用方式</p>
+</li>
+<li><p>颜色的值的表示方式</p>
+<ul>
+<li>1.使用表示颜色的英文单词</li>
+<li>2.使用16进制表示法（推荐使用）</li>
+<li>3.使用rgb表示法<ul>
+<li>rgb(n,n,n) n的取值是：0-255</li>
+<li>rgba(255,0,0,.2)</li>
+<li>a:表示alpha 透明的意思; a的取值范围：0-1  只有一位小数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>单位</p>
+<ul>
+<li><p>相对</p>
+<ul>
+<li>rem</li>
+<li>em<ul>
+<li>相对于当前对象内文本的字体尺寸</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>绝对</p>
+<ul>
+<li>px<ul>
+<li>像素</li>
+</ul>
+</li>
+<li>in<ul>
+<li>英寸</li>
+</ul>
+</li>
+<li>cm<ul>
+<li>厘米</li>
+</ul>
+</li>
+<li>mm<ul>
+<li>毫米</li>
+</ul>
+</li>
+<li>pt<ul>
+<li>点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>元素的显示方式</p>
+<ul>
+<li>display: none</li>
+<li>visibility: hidden;</li>
+<li>1.块级元素  display:block<ul>
+<li>1.独占一行</li>
+<li>2.可以设置有效宽高</li>
+<li>常见的块级元素：div p h1 h2 h3 h4 h5 h6 ul li ol dl dd dt </li>
+</ul>
+</li>
+<li>2.行内元素 display:inline<ul>
+<li>1.一行可以显示多个</li>
+<li>2.不能设置有效宽高</li>
+<li>常见的行内元素：span a  em strong b i s u del ins</li>
+</ul>
+</li>
+<li>3.行内块级元素  display:inline-block <ul>
+<li>1.一行可以显示多个</li>
+<li>2.可以设置有效宽高</li>
+<li>常见的行内块级元素：input  img</li>
+</ul>
+</li>
+<li><code>行内块级元素不能转换为行内元素，转换是无效的</code></li>
+</ul>
+</li>
+<li><p>盒子模型</p>
+<ul>
+<li><p>border 边框</p>
+<ul>
+<li><code>border : border-width || border-style || border-color</code><ul>
+<li>none：没有边框即忽略所有边框的宽度（默认值）</li>
+<li>solid：边框为单实线(最为常用的)</li>
+<li>dashed：边框为虚线  </li>
+<li>dotted：边框为点线</li>
+<li>double：边框为双实线</li>
+</ul>
+</li>
+<li>border-collapse:collapse; 表示边框合并在一起。</li>
+<li>border-radius: 左上角  右上角  右下角  左下角;</li>
+</ul>
+</li>
+<li><p>padding  内边距</p>
+</li>
+<li><p>margin  外边距</p>
+</li>
+<li><p>content 因素内容</p>
+<ul>
+<li>width</li>
+<li>height</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>css 3大特性</p>
+<ul>
+<li>1.层叠性<ul>
+<li>对于同一个元素的同一个属性，后面的样式会层叠(覆盖)前面的样式长江后浪推前浪，前浪死在沙滩上</li>
+</ul>
+</li>
+<li>2.继承性<ul>
+<li>继承父元素的文字大小,颜色</li>
+</ul>
+</li>
+<li>3.优先级<ul>
+<li><code>继承 &lt; 通配符选择器 &lt; 标签选择器 &lt; 类选择器 &lt; id选择器 &lt; 行内样式 &lt; !important</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>margin 塌陷</p>
+<ul>
+<li>给父盒子加边框</li>
+<li>给父盒子加：overflow:hidden</li>
+</ul>
+</li>
+<li><p>transition 过渡</p>
+</li>
+<li><p>行高单位问题和继承相关问题</p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/08/markdown笔记/" data-id="ck0cf8pah000ghguoioh16utv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/08/A-1.0---CSS/css/" data-id="ck0d4lou1000vm8uo5vex8pin" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ajax笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/07/ajax笔记/" class="article-date">
+  <time datetime="2019-09-06T16:00:00.000Z" itemprop="datePublished">2019-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/07/ajax笔记/">ajax笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>完善中</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/07/ajax笔记/" data-id="ck0d4losl0000m8uo89s6sdoy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
 
     </footer>
   </div>
@@ -496,55 +1192,24 @@
 </li>
 </ul>
 </li>
+<li><p>博客加密</p>
+<ul>
+<li><a href="https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md" target="_blank" rel="noopener">https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md</a></li>
+</ul>
+</li>
+<li><p>后台管理</p>
+<ul>
+<li><a href="https://www.cnblogs.com/xingyunblog/p/8681205.html" target="_blank" rel="noopener">https://www.cnblogs.com/xingyunblog/p/8681205.html</a></li>
+</ul>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/07/github+hexo搭建博客/" data-id="ck0cf8p9n0001hguo61zcn1ok" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/07/github+hexo搭建博客/" data-id="ck0d4losx0003m8uozh1spjie" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-AJAX笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/07/AJAX笔记/" class="article-date">
-  <time datetime="2019-09-06T16:00:00.000Z" itemprop="datePublished">2019-09-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/07/AJAX笔记/">AJAX笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>完善中</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/07/AJAX笔记/" data-id="ck0cf8p9t0003hguos1066snz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AJAX/">AJAX</a></li></ul>
-
     </footer>
   </div>
   
@@ -581,7 +1246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/07/简历/" data-id="ck0cf8p9x0005hguo84qkqmw9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/07/简历/" data-id="ck0d4lot7000bm8uox05mqpuu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简历/">简历</a></li></ul>
@@ -1394,7 +2059,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/08/html笔记/" data-id="ck0cf8pau000jhguohmf9xt8g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/08/html笔记/" data-id="ck0d4lotv000om8uocv61ipem" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
@@ -1413,23 +2078,10 @@
           <aside id="sidebar">
   
     
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发流程/">开发流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简历/">简历</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/开发流程/" style="font-size: 10px;">开发流程</a> <a href="/tags/情感/" style="font-size: 10px;">情感</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a>
+      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/jq/" style="font-size: 10px;">jq</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/开发流程/" style="font-size: 10px;">开发流程</a> <a href="/tags/情感/" style="font-size: 10px;">情感</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a>
     </div>
   </div>
 
@@ -1438,7 +2090,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
     </div>
   </div>
 
@@ -1455,11 +2107,7 @@
           </li>
         
           <li>
-            <a href="/2019/09/08/开发工具/">开发工具介绍</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/08/项目开发流程/">项目开发流程</a>
+            <a href="/2019/09/09/js修改iframe内容/">js修改iframe内容</a>
           </li>
         
           <li>
@@ -1467,7 +2115,11 @@
           </li>
         
           <li>
-            <a href="/2019/09/07/github+hexo搭建博客/">github+hexo搭建博客</a>
+            <a href="/2019/09/08/开发工具/">开发工具介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/08/项目开发流程/">项目开发流程</a>
           </li>
         
       </ul>

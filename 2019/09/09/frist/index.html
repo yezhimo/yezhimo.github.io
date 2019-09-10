@@ -7,18 +7,18 @@
   
   <title>oyl | yezhimo的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="oldTime： 2017-10-28 start： 2019-09-06 update：2019-09-09 ``   你在你的玫瑰花身上耗费的时间使得你的玫瑰花变得如此重要。   如果你需要我，那我就留下来。">
+  <meta name="description" content="function doDecrypt (pwd, onError) { 	console.log(&apos;in doDecrypt&apos;); 	const txt = document.getElementById(&apos;enc_content&apos;).innerHTML; 	let plantext; 	try { 		const bytes = CryptoJS.AES.decrypt(txt, pwd);">
 <meta name="keywords" content="情感">
 <meta property="og:type" content="article">
 <meta property="og:title" content="oyl">
 <meta property="og:url" content="http://yoursite.com/2019/09/09/frist/index.html">
 <meta property="og:site_name" content="yezhimo的个人博客">
-<meta property="og:description" content="oldTime： 2017-10-28 start： 2019-09-06 update：2019-09-09 ``   你在你的玫瑰花身上耗费的时间使得你的玫瑰花变得如此重要。   如果你需要我，那我就留下来。">
+<meta property="og:description" content="function doDecrypt (pwd, onError) { 	console.log(&apos;in doDecrypt&apos;); 	const txt = document.getElementById(&apos;enc_content&apos;).innerHTML; 	let plantext; 	try { 		const bytes = CryptoJS.AES.decrypt(txt, pwd);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-09T13:04:34.890Z">
+<meta property="og:updated_time" content="2019-09-10T00:51:24.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oyl">
-<meta name="twitter:description" content="oldTime： 2017-10-28 start： 2019-09-06 update：2019-09-09 ``   你在你的玫瑰花身上耗费的时间使得你的玫瑰花变得如此重要。   如果你需要我，那我就留下来。">
+<meta name="twitter:description" content="function doDecrypt (pwd, onError) { 	console.log(&apos;in doDecrypt&apos;); 	const txt = document.getElementById(&apos;enc_content&apos;).innerHTML; 	let plantext; 	try { 		const bytes = CryptoJS.AES.decrypt(txt, pwd);">
   
     <link rel="alternate" href="/atom.xml" title="yezhimo的个人博客" type="application/atom+xml">
   
@@ -87,37 +87,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>oldTime： 2017-10-28</li>
-<li>start： 2019-09-06</li>
-<li>update：2019-09-09</li>
-<li>``</li>
-</ul>
-<ol>
-<li><p>你在你的玫瑰花身上耗费的时间使得你的玫瑰花变得如此重要。</p>
-<!-- ---《小王子》 -->
-</li>
-<li><p>如果你需要我，那我就留下来。 </p>
-</li>
-</ol>
-<!-- 1. 曾在孤独一人的世界里生活过，感受过世界上最可怕的寒冷，所以即使在最炽烈的阳光中，都带着微微的凉意。 ——江南 《龙族》 -->
-<!-- 2. 这一路上我们将不彼此抛弃，不彼此出卖，直到死亡的尽头。---《龙族》 -->
-<!-- 1. 有的爱，可能还没开始，却就要结束了。 -->
-<!-- 1. 不管你变成什么模样，在真正爱你的人眼里，你看到的永远是自己最美的时刻。 -->
-<!-- 3. 命运这种东西,生来就是要被踏于足下的,如果你还未有力量反抗它,只需怀着勇气等待。---《龙族》 -->
-<!-- 1. 你没有如期归来,而这正是离别的意义。 --- 《白日梦》-北岛 -->
-
-<!-- 2. 我重临世界之日,诸逆臣皆当死去.  --- 《龙族》-江南 -->
-
-<!-- 3. 仙河东去,长生尽. ---《完美世界》-辰东 -->
-
-<!-- 1. 每个人心里都住着魔鬼，幸福是它的牢笼，当一切幸福都化作泡影，魔鬼就会冲破牢笼高唱着血腥的圣歌浮现。那时候，绝望的人将所向无敌。 -->
-
-<!-- http://www.360doc.com/content/16/0813/14/35032385_582933925.shtml -->
+        <script src=/js/crypto-js.js></script>
+<script>
+function doDecrypt (pwd, onError) {
+	console.log('in doDecrypt');
+	const txt = document.getElementById('enc_content').innerHTML;
+	let plantext;
+	try {
+		const bytes = CryptoJS.AES.decrypt(txt, pwd);
+		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+	} catch(err) {
+		if(onError) {
+			onError(err);
+		}
+		return;
+	}
+	document.getElementById('enc_content').innerHTML = plaintext;
+	document.getElementById('enc_content').style.display = 'block';
+	document.getElementById('enc_passwd').style.display = 'none';
+	if(typeof MathJax !== 'undefined') {
+		MathJax.Hub.Queue(
+			['resetEquationNumbers', MathJax.InputJax.TeX],
+			['PreProcess', MathJax.Hub],
+			['Reprocess', MathJax.Hub]
+		);
+	}
+}
+</script>
+<div id="enc_content" style="display:none">U2FsdGVkX1+9ftR1pyZkhwL+JTG7pbjpTg+ijcMrOwML2lColVA+B5VhuJA0NUQVbqk9OWclKE9nTQD5Lw1Gk9LznNN4smyHuxULUr1eq8LruPEY2YzFW9oZXEiN1uESmDsCC1SiRNMMgU2nESSyofayImcPPHzWRHFUgty3G4W6AY+zRgXwTCkiOlDGqe1qDiod0nxioJrYtNianl/K20c8HbOKUaA+yPHOXeZJFfMfk3L9t3ibxwuY9rWMpIy9R2dPBjazxtNOxuZ4Ituc77eSg6pwlEC+SX0xxcQs9oFdHZcaDaYhG1Hwo/se5jSeTY/ks+/zT/eB3oPKlR5ODDz65d708XHOQ+CK6h5SJnlYHyhrjVBLJniYlbK8FQhU0LUrejQ71lAryQPLm8YjPH877vfHtvhQew6ejMilQTiA2S6BY5qEbK/9WSA8QzUyUiCi9vIlU1uZ7pLj0zly52YVjYX9Z5U2n0w3h+azKhnHGmQFM37eWzuY8246Jb+tE7ZXOscxq9JEjho0zNetPe9zNVe6ZXP6tqeFbAd+ftgf1QigBgbd/sIvmffmEIrA6l0Ro4wa0zGcjeh7j2++XuAp02CyN2CnLyMQaAOKtNmSQy/3ydoU+J9t07TRNBEvwY7Qik5YRyCYdFglEC8RHQ8klQTbcTjLarU8P4Lc2umsZEoV7EmF/KzD6DWfHAE9APsCOLOh4En0enw3BW68f591fQzhydgnuwsOAeLwFCa6aKKL+JIWiLuCVsLv1QuWVb4iqR857MyRF5uSdv+7cC5nh1aV7oqIkU72diB0i4afTvUrkDDkgkmw+emt3Z7QOF/b6Rc9RMYLGysjR4CYuquOl7StdmRoydI0WGeu7SnV5Pd3V2aRj4B5pPaOObzON1RKNnwlZNAu0U1LbxMnP1qsFnQXJXccj16H3Caf73D4jHk4h2dZB7Kq762uNfanZm4U7tKXGdfySePezYSgU7ys/hX9hx5P081RZ3iCjBGwQoxD2/ikUTG86Vi6UrP3psOHq+VPDaDURGaWeOExVutfTOMsQ4mgSl0F/B2InoQXgbqd10QCx9UBfYJMg5e9F3p7x7sIsGQDgbN4zLqVMmqL/Aq3uOWm0SlpduqRFC4HO3/pagpIlNkOKuzFyu3rK3uJlAmrh3i6mKqlN3+FOWSjSzgDYuUmD05oFfH/LQqMGCphDyWaCDM+oTPE2OvHnp/Nng8Q3U6HVLAE5T6YEgnsPSz0tATcoPHPXOMwO3drM4AETLfbbiJQBT3BI0OZPJfbXCs9UEyMNw2nQmvO8unZ429y64qtnGMbVM6fZ8WAYr0wXomIimdlGiMkOWzlzMhS9yM16NTx2UcsS2N/j5CcfiFickzcZTFuep5XQZIZjM83PIAIGJTIhLg/E+on7XFj3mlsPSRfDCQ/0wmQKI+iCGZpyGGE6WfEAU0exV3UKecHmenej70ws5TfJkuiKhAS3Vugj/wNtdmnQgtbhdlf6HRwzpw3RCbQjufq99xD7FAxasSiGu0vROsS+h2HNymhfeGjyh8jfO2wkrs/YHEqgEaoSLvqanuRPJsKhqfkIjZ7kPko5HLwb+rDMzXn86CPAEf76YNm7SFBjlR5BrDgrFy02VuFKyQ085MeZMU3Osuee650v4Ta4soIiq6gKVXh8BS5nTfKFtoYVA8sptLZAImiICnHlkEm2nKvcpLU+5xhiO4lHNDIVds2KrkB+ektSxprmXnkuk4YNCri8/NPCiJZ8Awnh0C/66eMruABhduW5n1WwYmNKEYQsBAeRkAQvlC0pokwzRZstbrygGrusyHQW8M+2Veaf2IutshBdRkMpdoAy2kpKJzf/lFjpExXcvBIBcwymZK2k/DRWUEkbjOUS3PR3QXesbmBp3cutyvTo/dFt19kIPbSaltpHAbZGP2ij4cSYA4uYkgKBZBb2cANhPGqT/2EInj9/Vk=</div>
+<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
+<script>
+var onError = function(error) {
+	document.getElementById("enc_error").innerHTML = "password error!"
+};
+function decrypt() {
+var passwd = document.getElementById("enc_pwd_input").value;
+console.log(passwd);
+doDecrypt(passwd, onError);
+}
+</script>
+</div>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/09/frist/" data-id="ck0cf8p9g0000hguo7vbgvig5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/09/frist/" data-id="ck0d4loss0001m8uok8w43lfp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/情感/">情感</a></li></ul>
@@ -129,9 +142,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/09/08/开发工具/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/09/09/js修改iframe内容/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">开发工具介绍</div>
+      <div class="article-nav-title">js修改iframe内容</div>
     </a>
   
 </nav>
@@ -144,23 +157,10 @@
           <aside id="sidebar">
   
     
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发流程/">开发流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/情感/">情感</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简历/">简历</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/开发流程/" style="font-size: 10px;">开发流程</a> <a href="/tags/情感/" style="font-size: 10px;">情感</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a>
+      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/jq/" style="font-size: 10px;">jq</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/开发流程/" style="font-size: 10px;">开发流程</a> <a href="/tags/情感/" style="font-size: 10px;">情感</a> <a href="/tags/简历/" style="font-size: 10px;">简历</a>
     </div>
   </div>
 
@@ -169,7 +169,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
     </div>
   </div>
 
@@ -186,11 +186,7 @@
           </li>
         
           <li>
-            <a href="/2019/09/08/开发工具/">开发工具介绍</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/08/项目开发流程/">项目开发流程</a>
+            <a href="/2019/09/09/js修改iframe内容/">js修改iframe内容</a>
           </li>
         
           <li>
@@ -198,7 +194,11 @@
           </li>
         
           <li>
-            <a href="/2019/09/07/github+hexo搭建博客/">github+hexo搭建博客</a>
+            <a href="/2019/09/08/开发工具/">开发工具介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/08/项目开发流程/">项目开发流程</a>
           </li>
         
       </ul>
