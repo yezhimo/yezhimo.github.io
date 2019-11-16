@@ -5,18 +5,20 @@
   
 
   
-  <title>Tag: markdown | yezhimo的个人博客</title>
+  <title>跨域 | yezhimo的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Something for nothing.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yezhimo的个人博客">
-<meta property="og:url" content="http://yoursite.com/tags/markdown/index.html">
+  <meta name="description" content="什么是跨域？ Javascript处于安全方面的考虑（同源策略限制），不允许跨域调用其他页面的对象。   跨域的产生 Domains,protocols,posts 不一样就是跨域 Domains 域名 protocols 协议 （分为http和https）     tips 如果是protocols和ports不一致造成的跨域，前台没有办法解决 域只通过URL的首部，也就是protocols+">
+<meta name="keywords" content="跨域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域">
+<meta property="og:url" content="http://yoursite.com/2019/09/14/跨域笔记/index.html">
 <meta property="og:site_name" content="yezhimo的个人博客">
-<meta property="og:description" content="Something for nothing.">
+<meta property="og:description" content="什么是跨域？ Javascript处于安全方面的考虑（同源策略限制），不允许跨域调用其他页面的对象。   跨域的产生 Domains,protocols,posts 不一样就是跨域 Domains 域名 protocols 协议 （分为http和https）     tips 如果是protocols和ports不一致造成的跨域，前台没有办法解决 域只通过URL的首部，也就是protocols+">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-16T08:06:43.191Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yezhimo的个人博客">
-<meta name="twitter:description" content="Something for nothing.">
+<meta name="twitter:title" content="跨域">
+<meta name="twitter:description" content="什么是跨域？ Javascript处于安全方面的考虑（同源策略限制），不允许跨域调用其他页面的对象。   跨域的产生 Domains,protocols,posts 不一样就是跨域 Domains 域名 protocols 协议 （分为http和https）     tips 如果是protocols和ports不一致造成的跨域，前台没有办法解决 域只通过URL的首部，也就是protocols+">
   
     <link rel="alternate" href="/atom.xml" title="yezhimo的个人博客" type="application/atom+xml">
   
@@ -63,40 +65,102 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/09/08/markdown笔记/" class="archive-article-date">
-  <time datetime="2019-09-07T16:00:00.000Z" itemprop="datePublished">9月 8</time>
+        <section id="main"><article id="post-跨域笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/14/跨域笔记/" class="article-date">
+  <time datetime="2019-09-13T16:00:00.000Z" itemprop="datePublished">2019-09-14</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/08/markdown笔记/">markdown</a>
+    <h1 class="article-title" itemprop="name">
+      跨域
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>什么是跨域？<ul>
+<li>Javascript处于安全方面的考虑（同源策略限制），不允许跨域调用其他页面的对象。</li>
+</ul>
+</li>
+<li>跨域的产生<ul>
+<li>Domains,protocols,posts 不一样就是跨域<ul>
+<li>Domains 域名</li>
+<li>protocols 协议 （分为http和https）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>tips<ul>
+<li>如果是protocols和ports不一致造成的跨域，前台没有办法解决</li>
+<li>域只通过URL的首部，也就是protocols+domain+port来判断是否跨域，不会去判断domain是否对应着相同的IP地址</li>
+</ul>
+</li>
+<li>解决跨域的方法<ul>
+<li>前端<ul>
+<li>使用HTML5新属性postMessage</li>
+<li>利用iframe和location.hash</li>
+<li>动态创建script标签<ul>
+<li>虽然浏览器默认阻止跨域请求，但是不阻止在页面中引用其他域的文件。</li>
+<li>因此可以动态添加script标签。JSONP就是利用这一原理来实现ajax跨域的</li>
+</ul>
+</li>
+<li>通过修改docment.domain来实现跨域<ul>
+<li>该方法必须是在同主域，不同子域的情况下才生效<ul>
+<li>如：<code>morningstar.com</code> 和 <code>test.morningstar.com</code></li>
+<li>只要把两个页面 的<code>document.domain</code>都指向主域就可以了，比如<code>document.domain=&#39;morningstar.com&#39;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/14/跨域笔记/" data-id="ck31b9sad000aiouosnadw07e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/14/i5ting_toc笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          i5ting_toc
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/10/图片保存/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">html保存为图片</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
