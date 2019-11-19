@@ -7,6 +7,9 @@
   
   <title>html保存为图片 | yezhimo的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
   <meta name="description" content="思路  html -&amp;gt; canvas -&amp;gt; image -&amp;gt; a[download] html2canvas.js：可将 htmldom 转为 canvas 元素。 canvasAPI：toDataUrl() 可将 canvas 转为 base64 格式 创建 a[download] 标签触发 click 事件实现下载 只有 Firefox 和 Chrome 支持 downlo">
 <meta name="keywords" content="html2canvas">
 <meta property="og:type" content="article">
@@ -23,69 +26,80 @@
     <link rel="alternate" href="/atom.xml" title="yezhimo的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/images/default-avatar.webp">
   
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <script>
+  let antiquityStorage = window.sessionStorage.getItem('antiquitySessionStorage');
+  if (antiquityStorage == '' || antiquityStorage == null) {
+    var antiquityLoader = '<div id="loaderbox"><div class="loader"><div class="load-roll"><div class="load-top"></div><div class="load-right"></div><div class="load-bottom"></div></div></div></div>';
+    document.write(antiquityLoader);
+    document.body.style.overflow = 'hidden'
+  }
+  </script>
 </head>
 </html>
 <body>
-  <div id="container">
-    <div id="wrap">
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="oyl">
+    
+    
       <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">yezhimo的个人博客</a>
-      </h1>
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a class="nav-item" href="/" title
         
-          <a class="main-nav-link" href="/">Home</a>
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        >归档</a>
+      
+        <a class="nav-item" href="/" title
         
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
+        >简历</a>
+      
+    </nav>
   </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-图片保存" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/10/图片保存/" class="article-date">
-  <time datetime="2019-09-09T16:00:00.000Z" itemprop="datePublished">2019-09-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-图片保存" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       html保存为图片
     </h1>
   
 
-      </header>
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/09/10/图片保存/" class="article-date">
+  <time datetime="2019-09-09T16:00:00.000Z" itemprop="datePublished">2019-09-10</time>
+</a>
     
-    <div class="article-entry" itemprop="articleBody">
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html2canvas/">html2canvas</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-mac" itemprop="articleBody">
       
         <ol>
 <li><p>思路</p>
@@ -103,9 +117,9 @@
 </ul>
 </li>
 <li><p>使用</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imageWrapper"</span> <span class="attr">ref</span>=<span class="string">"imageWrapper"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"real_pic"</span> <span class="attr">:src</span>=<span class="string">"dataURL"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+ <div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imageWrapper"</span> <span class="attr">ref</span>=<span class="string">"imageWrapper"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"real_pic"</span> <span class="attr">:src</span>=<span class="string">"dataURL"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        dataURL: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods:&#123;</span><br><span class="line">    toImage() &#123;</span><br><span class="line">        html2canvas(<span class="keyword">this</span>.$refs.imageWrapper,&#123;</span><br><span class="line">            backgroundColor: <span class="literal">null</span></span><br><span class="line">        &#125;).then(<span class="function">(<span class="params">canvas</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> dataURL = canvas.toDataURL(<span class="string">"image/png"</span>);</span><br><span class="line">            <span class="keyword">this</span>.dataURL = dataURL;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        dataURL: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods:&#123;</span><br><span class="line">    toImage() &#123;</span><br><span class="line">        html2canvas(<span class="keyword">this</span>.$refs.imageWrapper,&#123;</span><br><span class="line">            backgroundColor: <span class="literal">null</span></span><br><span class="line">        &#125;).then(<span class="function">(<span class="params">canvas</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> dataURL = canvas.toDataURL(<span class="string">"image/png"</span>);</span><br><span class="line">            <span class="keyword">this</span>.dataURL = dataURL;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 </li>
 <li><p>常见bug</p>
 <ul>
@@ -132,77 +146,113 @@
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/10/图片保存/" data-id="ck345zrlw000bp4uo6x0957un" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html2canvas/">html2canvas</a></li></ul>
-
-    </footer>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
   </div>
   
     
 <nav id="article-nav">
-  
-    <a href="/2019/09/10/计算机快捷键/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          计算机快捷键
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/09/10/获取城市json数据/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">获取城市json文件</div>
-    </a>
-  
+  <div class="article-nav-block">
+    
+      <a href="/2019/09/14/跨域/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            跨域
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/09/10/html快速生成/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">html快速生成</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
 </nav>
 
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
   
 </article>
-
 </section>
-        
-          <aside id="sidebar">
+        <aside id="sidebar">
   
-    
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.webp" title="oyl"></img>
+    <h3 class="avatar-name">
+      
+        夜之末
+      
+    </h3>
+    <p class="avatar-slogan">
+      语言是世界上最没用的东西，请给我代码。
+    </p>
+  </div>
+</div>
+
 
   
     
-  <div class="widget-wrap">
+  <div class="widget-box">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS预编译/">CSS预编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html2canvas/">html2canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htmlbuild时移除console-log-代码/">htmlbuild时移除console.log()代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http状态码/">http状态码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i5ting-toc/">i5ting_toc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人博客搭建/">个人博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/关于博主/">关于博主</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/城市json文件/">城市json文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机快捷键/">计算机快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS预编译/">CSS预编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html2canvas/">html2canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htmlbuild时移除console-log-代码/">htmlbuild时移除console.log()代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html快速生成/">html快速生成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http状态码/">http状态码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i5ting-toc/">i5ting_toc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人博客搭建/">个人博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/关于博主/">关于博主</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/城市json文件/">城市json文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机快捷键/">计算机快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源分享/">资源分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
     </div>
   </div>
 
 
   
     
-  <div class="widget-wrap">
+
+  
+    
+  <div class="widget-box">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
     </div>
   </div>
 
-
   
     
-  <div class="widget-wrap">
+  <div class="widget-box">
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2019/11/18/CSS笔记/">(no title)</a>
+            <a href="/2019/11/18/资源分享/">资源分享</a>
           </li>
         
           <li>
             <a href="/2019/09/14/i5ting_toc/">i5ting_toc</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/14/http状态码/">http状态码</a>
           </li>
         
           <li>
@@ -213,39 +263,42 @@
             <a href="/2019/09/14/跨域/">跨域</a>
           </li>
         
-          <li>
-            <a href="/2019/09/14/http状态码/">http状态码</a>
-          </li>
-        
       </ul>
     </div>
   </div>
 
   
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 yezhimo<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路烟霞</a>
+      
     </div>
   </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 yezhimo &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">小棋童告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   <script src="/fancybox/jquery.fancybox.pack.js"></script>
@@ -255,6 +308,18 @@
 
 
 
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/" class="mobile-nav-link">简历</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
   </div>
 </body>
 </html>
