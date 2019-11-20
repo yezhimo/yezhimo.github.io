@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="yezhimo的个人博客">
 <meta property="og:description" content="介绍  CSS (Cascading Style Sheets) 用于设置HTML页面中的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局等外观显示样式 名字 CSS样式表 层叠样式表 级联样式表   css 3大特性 1.层叠性 对于同一个元素的同一个属性，后面的样式会层叠(覆盖)前面的样式长江后浪推前浪，前浪死在沙滩上   2.继承性 继承父元素的文字大">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-19T07:02:57.271Z">
+<meta property="og:updated_time" content="2019-11-19T07:58:03.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css笔记">
 <meta name="twitter:description" content="介绍  CSS (Cascading Style Sheets) 用于设置HTML页面中的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局等外观显示样式 名字 CSS样式表 层叠样式表 级联样式表   css 3大特性 1.层叠性 对于同一个元素的同一个属性，后面的样式会层叠(覆盖)前面的样式长江后浪推前浪，前浪死在沙滩上   2.继承性 继承父元素的文字大">
@@ -121,7 +121,7 @@
 </ul>
 </li>
 <li>3.优先级<ul>
-<li><code>继承 &lt; 通配符选择器 &lt; 标签选择器 &lt; 类选择器 &lt; id选择器 &lt; 行内样式 &lt; !important</code></li>
+<li><code>继承 &lt; 通配符选择器 &lt; 标签选择器（1） &lt; 类选择器（10） &lt; id选择器（100） &lt; 行内样式（1000） &lt; !important（无穷大）</code></li>
 </ul>
 </li>
 </ul>
@@ -248,7 +248,11 @@
 <ul>
 <li><p>字体大小</p>
 <ul>
-<li><code>font-size</code></li>
+<li><code>font-size</code><ul>
+<li>现在网页中普遍使用14px+</li>
+<li>尽量使用偶数的数字字号，ie6等老式浏览器支持奇数会有bug</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>字体粗细</p>
@@ -263,7 +267,7 @@
 </li>
 </ul>
 </li>
-<li><p>字体样式</p>
+<li><p>字体样式/字体风格</p>
 <ul>
 <li><code>font-style</code><ul>
 <li><code>normal</code></li>
@@ -278,6 +282,7 @@
 <li><code>font-family</code><ul>
 <li><code>Microsoft YaHei</code> 微软雅黑</li>
 <li><code>Sim Sun</code> 宋体</li>
+<li>尽量使用系统默认字体，保证在任何用户的浏览器中都能正确显示</li>
 </ul>
 </li>
 </ul>
@@ -465,7 +470,7 @@
 </li>
 <li><p>颜色</p>
 <ul>
-<li>1.使用表示颜色的英文单词</li>
+<li>1.预定义的颜色值，英文单词</li>
 <li>2.使用16进制表示法（推荐使用）</li>
 <li>3.使用rgb表示法<ul>
 <li><code>rgb(n,n,n)</code> n的取值是：0-255</li>
@@ -680,7 +685,7 @@
 </li>
 </ul>
 </li>
-<li>背景图像固定<ul>
+<li>背景图像固定/背景附着<ul>
 <li><code>background-attachment: fixed</code><ul>
 <li>scroll : 　背景图像是随对象内容滚动</li>
 <li>fixed : 　背景图像固定 </li>
@@ -922,18 +927,59 @@
 </ul>
 </li>
 <li><p>渐变</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">-moz-linear-gradient</span>(left,#ace,#f96);<span class="comment">/*Mozilla*/</span></span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">-webkit-gradient</span>(linear,0 50%,100% 50%,from(#ace),<span class="built_in">to</span>(#f96));<span class="comment">/*Old gradient for webkit*/</span></span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">-webkit-linear-gradient</span>(left,#ace,#f96);<span class="comment">/*new gradient for Webkit*/</span></span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">-o-linear-gradient</span>(left,#ace,#f96); <span class="comment">/*Opera11*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><p>线性渐变</p>
+<ul>
+<li>linear-gradien<ul>
+<li><code>Background:linear-gradient(To right,Yellow,Green)</code><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">-moz-linear-gradient</span>(left,#ace,#f96);<span class="comment">/*Mozilla*/</span></span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">-webkit-gradient</span>(linear,0 50%,100% 50%,from(#ace),<span class="built_in">to</span>(#f96));<span class="comment">/*Old gradient for webkit*/</span></span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">-webkit-linear-gradient</span>(left,#ace,#f96);<span class="comment">/*new gradient for Webkit*/</span></span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">-o-linear-gradient</span>(left,#ace,#f96); <span class="comment">/*Opera11*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>径向渐变</p>
+<ul>
+<li>radial-gradien<ul>
+<li><code>background: radial-gradient(150px  at  center,yellow,green)</code></li>
+<li><code>background: radial-gradient(150px  at 0px  0px,yellow,green)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 <li><p>字体图标</p>
 <ul>
+<li><code>fontello</code><ul>
+<li><a href="http://fontello.com" target="_blank" rel="noopener">http://fontello.com</a></li>
+</ul>
+</li>
+<li><code>Font-Awesome</code><ul>
+<li><a href="http://fortawesome.github.io/Font-Awesome" target="_blank" rel="noopener">http://fortawesome.github.io/Font-Awesome</a></li>
+</ul>
+</li>
+<li><code>Glyphicon Halflings</code><ul>
+<li><a href="http://glyphicons.com" target="_blank" rel="noopener">http://glyphicons.com</a></li>
+</ul>
+</li>
+<li><code>Icons8</code><ul>
+<li><a href="https://icons8.com" target="_blank" rel="noopener">https://icons8.com</a></li>
+</ul>
+</li>
+<li>other<ul>
 <li><a href="http://icomoon.io" target="_blank" rel="noopener">http://icomoon.io</a></li>
 <li><a href="http://www.iconfont.cn/" target="_blank" rel="noopener">http://www.iconfont.cn/</a></li>
 <li><a href="http://www.iconfont.cn/" target="_blank" rel="noopener">http://www.iconfont.cn/</a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ol>
+<ol start="14">
 <li><p>精灵图</p>
 <ul>
 <li>多个小图标放在一个图片上</li>
+<li>为了有效地减少服务器接受和发送请求的次数，提高页面的加载速度，</li>
 </ul>
 </li>
 <li><p>过渡 （css3）</p>
@@ -1107,6 +1153,22 @@
 </ul>
 </li>
 </ol>
+<ol start="17">
+<li>动画 <ul>
+<li><code>animation:动画名称 动画时间 运动曲线  何时开始  播放次数  是否反方向;</code><ul>
+<li>animation-iteration-count:infinite; <ul>
+<li>无限循环播放</li>
+</ul>
+</li>
+<li>animation-play-state:paused;<ul>
+<li>暂停动画<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> 动画名称 &#123;</span><br><span class="line">  from&#123; 开始位置 &#125;  0%</span><br><span class="line">  to&#123;  结束  &#125;  100%</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -1121,11 +1183,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/09/08/github+hexo搭博客/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/09/08/markdown/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            github+hexo搭建博客
+            markdown
           
         </div>
       </a>
@@ -1183,7 +1245,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS预编译/">CSS预编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html2canvas/">html2canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/htmlbuild时移除console-log-代码/">htmlbuild时移除console.log()代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html快速生成/">html快速生成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http状态码/">http状态码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i5ting-toc/">i5ting_toc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人博客搭建/">个人博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/关于博主/">关于博主</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/城市json文件/">城市json文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机快捷键/">计算机快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源分享/">资源分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http状态码/">http状态码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源分享/">资源分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
     </div>
   </div>
 
@@ -1208,11 +1270,7 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
-            <a href="/2019/11/18/资源分享/">资源分享</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/14/i5ting_toc/">i5ting_toc</a>
+            <a href="/2019/11/18/share/">资源分享</a>
           </li>
         
           <li>
@@ -1220,11 +1278,15 @@ gitment.render('gitmentContainer')
           </li>
         
           <li>
-            <a href="/2019/09/14/关于博主/">关于博主</a>
+            <a href="/2019/09/14/跨域/">跨域</a>
           </li>
         
           <li>
-            <a href="/2019/09/14/跨域/">跨域</a>
+            <a href="/2019/09/10/cordova/">cordova</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/08/markdown/">markdown</a>
           </li>
         
       </ul>
