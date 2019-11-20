@@ -5,23 +5,23 @@
   
 
   
-  <title>跨域 | yezhimo的个人博客</title>
+  <title>webpack | yezhimo的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="什么是跨域？ Javascript处于安全方面的考虑（同源策略限制），不允许跨域调用其他页面的对象。   跨域的产生 Domains,protocols,posts 不一样就是跨域 Domains 域名 protocols 协议 （分为http和https）     tips 如果是protocols和ports不一致造成的跨域，前台没有办法解决 域只通过URL的首部，也就是protocols+">
-<meta name="keywords" content="跨域">
+  <meta name="description" content="介绍  JavaScript 应用程序的模块打包器(module bundler) 分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。 SPA（single page web application） 单页应用   重点内容  入口(entry) 输出(output) 加载器(l">
+<meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域">
-<meta property="og:url" content="http://yoursite.com/2019/09/14/跨域/index.html">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="http://yoursite.com/2019/09/24/webpack/index.html">
 <meta property="og:site_name" content="yezhimo的个人博客">
-<meta property="og:description" content="什么是跨域？ Javascript处于安全方面的考虑（同源策略限制），不允许跨域调用其他页面的对象。   跨域的产生 Domains,protocols,posts 不一样就是跨域 Domains 域名 protocols 协议 （分为http和https）     tips 如果是protocols和ports不一致造成的跨域，前台没有办法解决 域只通过URL的首部，也就是protocols+">
+<meta property="og:description" content="介绍  JavaScript 应用程序的模块打包器(module bundler) 分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。 SPA（single page web application） 单页应用   重点内容  入口(entry) 输出(output) 加载器(l">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-16T10:17:18.871Z">
+<meta property="og:updated_time" content="2019-11-20T08:18:05.075Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域">
-<meta name="twitter:description" content="什么是跨域？ Javascript处于安全方面的考虑（同源策略限制），不允许跨域调用其他页面的对象。   跨域的产生 Domains,protocols,posts 不一样就是跨域 Domains 域名 protocols 协议 （分为http和https）     tips 如果是protocols和ports不一致造成的跨域，前台没有办法解决 域只通过URL的首部，也就是protocols+">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="介绍  JavaScript 应用程序的模块打包器(module bundler) 分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。 SPA（single page web application） 单页应用   重点内容  入口(entry) 输出(output) 加载器(l">
   
     <link rel="alternate" href="/atom.xml" title="yezhimo的个人博客" type="application/atom+xml">
   
@@ -70,25 +70,25 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-跨域" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-webpack" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      跨域
+      webpack
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/09/14/跨域/" class="article-date">
-  <time datetime="2019-09-13T16:00:00.000Z" itemprop="datePublished">2019-09-14</time>
+    <a href="/2019/09/24/webpack/" class="article-date">
+  <time datetime="2019-09-23T16:00:00.000Z" itemprop="datePublished">2019-09-24</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
 
   </div>
   
@@ -101,47 +101,87 @@
     
     <div class="article-content article-content-mac" itemprop="articleBody">
       
-        <ol>
-<li>什么是跨域？<ul>
-<li>Javascript处于安全方面的考虑（同源策略限制），不允许跨域调用其他页面的对象。</li>
+        <ul>
+<li><p>介绍</p>
+<ul>
+<li>JavaScript 应用程序的模块打包器(module bundler)</li>
+<li>分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。</li>
+<li>SPA（single page web application） 单页应用</li>
 </ul>
 </li>
-<li>跨域的产生<ul>
-<li>Domains,protocols,posts 不一样就是跨域<ul>
-<li>Domains 域名</li>
-<li>protocols 协议 （分为http和https）</li>
+<li><p>重点内容</p>
+<ul>
+<li>入口(entry)</li>
+<li>输出(output)</li>
+<li>加载器(loader)</li>
+<li>插件(plugins)</li>
+</ul>
+</li>
+<li><p>安装</p>
+<ul>
+<li><code>npm install webpack -g</code></li>
+</ul>
+</li>
+<li><p>配置 </p>
+<ul>
+<li><p><code>webpack.config.js</code></p>
+  <div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"><span class="comment">// 入口文件配置</span></span><br><span class="line">entry: <span class="string">"./src/app.js"</span>,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 出口文件配置项</span></span><br><span class="line">output: &#123;</span><br><span class="line"><span class="comment">// 输出的路径，通常到绝对路径</span></span><br><span class="line">path: path.join(__dirname, <span class="string">'dist'</span>),</span><br><span class="line"><span class="comment">// 输出文件名字</span></span><br><span class="line">filename: <span class="string">"bundle.js"</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><code>webpack-dev-server</code></p>
+<ul>
+<li>自动编译刷新浏览器</li>
+<li>安装<ul>
+<li><code>npm init -y</code><ul>
+<li>生成package.json项目描述文件</li>
+</ul>
+</li>
+<li><code>npm install webpack-dev-server -g</code></li>
+</ul>
+</li>
+<li>运行<ul>
+<li><code>webpack-dev-server --inline</code></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>tips<ul>
-<li>如果是protocols和ports不一致造成的跨域，前台没有办法解决</li>
-<li>域只通过URL的首部，也就是protocols+domain+port来判断是否跨域，不会去判断domain是否对应着相同的IP地址</li>
+<li><p>打包less资源</p>
+<ul>
+<li><code>npm install less less-loader style-loader css-loader --save-dev</code></li>
 </ul>
 </li>
-<li>解决跨域的方法<ul>
-<li>前端<ul>
-<li>使用HTML5新属性postMessage</li>
-<li>利用iframe和location.hash</li>
-<li>动态创建script标签<ul>
-<li>虽然浏览器默认阻止跨域请求，但是不阻止在页面中引用其他域的文件。</li>
-<li>因此可以动态添加script标签。JSONP就是利用这一原理来实现ajax跨域的</li>
+<li><p>打包sass 资源</p>
+<ul>
+<li><code>npm install node-sass sass-loader css-loader style-loader --save-dev</code></li>
 </ul>
 </li>
-<li>通过修改docment.domain来实现跨域<ul>
-<li>该方法必须是在同主域，不同子域的情况下才生效<ul>
-<li>如：<code>morningstar.com</code> 和 <code>test.morningstar.com</code></li>
-<li>只要把两个页面 的<code>document.domain</code>都指向主域就可以了，比如<code>document.domain=&#39;morningstar.com&#39;</code></li>
+<li><p>打包url()请求的资源</p>
+<ul>
+<li><code>npm install url-loader file-loader --save-dev</code></li>
+</ul>
+</li>
+<li><p>es6 转 es5</p>
+<ul>
+<li><code>npm install babel-core babel-loader babel-preset-es2015 babel-plugin-transform-runtime  --save-dev</code></li>
+</ul>
+</li>
+<li><p><code>html-webpack-plugin</code></p>
+<ul>
+<li><code>npm i html-webpack-plugin --save-dev</code></li>
+</ul>
+</li>
+<li><p><code>html-loader</code></p>
+<ul>
+<li><code>npm i -D html-loader</code></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><p>运行</p>
+<ul>
+<li><code>npm run dev</code></li>
 </ul>
 </li>
-<li>后台<br>  - </li>
 </ul>
-</li>
-</ol>
 
       
     </div>
@@ -156,11 +196,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/09/14/http状态码/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/09/24/jq插件/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            http状态码
+            jq插件
           
         </div>
       </a>
@@ -168,8 +208,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/09/10/cordova/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">cordova</div>
+      <a href="/2019/09/24/vue笔记/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">vue入坑之路</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
