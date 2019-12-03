@@ -7,18 +7,18 @@
   
   <title>javaScript | yezhimo的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是js（JavaScript）  由Netscape公司开发 随Navigator导航者一起发布 介于Java与HTML之间、基于对象和事件驱动的编程语言 可直接运行在Web浏览器中的弱类型脚本语言 JavaScript 对大小写是敏感的。   变量 and 常量  命名规则  声明方式   123456789// 变量    var name1 = &apos;jack&apos;;    // 变量声明可跨">
+  <meta name="description" content="什么是js（JavaScript）  由Netscape公司开发 随Navigator导航者一起发布 介于Java与HTML之间、基于对象和事件驱动的编程语言 可直接运行在Web浏览器中的弱类型脚本语言 JavaScript 对大小写是敏感的。   变量 and 常量  命名规则  不能用数字开头,能够用a-z A-Z _  $  不能使用关键字和保留字  js严格区分大小写的。  规范：  命">
 <meta name="keywords" content="javaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaScript">
 <meta property="og:url" content="http://yoursite.com/2019/11/21/javascript/index.html">
 <meta property="og:site_name" content="yezhimo的个人博客">
-<meta property="og:description" content="什么是js（JavaScript）  由Netscape公司开发 随Navigator导航者一起发布 介于Java与HTML之间、基于对象和事件驱动的编程语言 可直接运行在Web浏览器中的弱类型脚本语言 JavaScript 对大小写是敏感的。   变量 and 常量  命名规则  声明方式   123456789// 变量    var name1 = &apos;jack&apos;;    // 变量声明可跨">
+<meta property="og:description" content="什么是js（JavaScript）  由Netscape公司开发 随Navigator导航者一起发布 介于Java与HTML之间、基于对象和事件驱动的编程语言 可直接运行在Web浏览器中的弱类型脚本语言 JavaScript 对大小写是敏感的。   变量 and 常量  命名规则  不能用数字开头,能够用a-z A-Z _  $  不能使用关键字和保留字  js严格区分大小写的。  规范：  命">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-23T08:11:12.040Z">
+<meta property="og:updated_time" content="2019-12-03T07:42:22.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaScript">
-<meta name="twitter:description" content="什么是js（JavaScript）  由Netscape公司开发 随Navigator导航者一起发布 介于Java与HTML之间、基于对象和事件驱动的编程语言 可直接运行在Web浏览器中的弱类型脚本语言 JavaScript 对大小写是敏感的。   变量 and 常量  命名规则  声明方式   123456789// 变量    var name1 = &apos;jack&apos;;    // 变量声明可跨">
+<meta name="twitter:description" content="什么是js（JavaScript）  由Netscape公司开发 随Navigator导航者一起发布 介于Java与HTML之间、基于对象和事件驱动的编程语言 可直接运行在Web浏览器中的弱类型脚本语言 JavaScript 对大小写是敏感的。   变量 and 常量  命名规则  不能用数字开头,能够用a-z A-Z _  $  不能使用关键字和保留字  js严格区分大小写的。  规范：  命">
   
     <link rel="alternate" href="/atom.xml" title="yezhimo的个人博客" type="application/atom+xml">
   
@@ -100,6 +100,20 @@
 <li><p>变量 and 常量</p>
 <ul>
 <li><p>命名规则</p>
+<ul>
+<li><p><code>不能用数字开头,能够用a-z A-Z _  $</code></p>
+</li>
+<li><p><code>不能使用关键字和保留字</code></p>
+</li>
+<li><p><code>js严格区分大小写的。</code></p>
+</li>
+<li><p>规范：</p>
+<ul>
+<li>命名要有意义</li>
+<li>驼峰命名法</li>
+</ul>
+</li>
+</ul>
 </li>
 <li><p>声明方式</p>
   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量</span></span><br><span class="line">    <span class="keyword">var</span> name1 = <span class="string">'jack'</span>;</span><br><span class="line">    <span class="comment">// 变量声明可跨多行,使用 逗号 (,) 隔开</span></span><br><span class="line">    <span class="keyword">var</span> tom1 = <span class="string">'jojo'</span>,</span><br><span class="line">    tom2 = <span class="string">'lili'</span>;</span><br><span class="line"> <span class="comment">// 常量</span></span><br><span class="line">    <span class="keyword">const</span> c = <span class="string">'11'</span></span><br><span class="line">    <span class="comment">// 常量不能重新赋值</span></span><br><span class="line">    <span class="comment">//如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。</span></span><br></pre></td></tr></table></figure>
@@ -429,6 +443,16 @@
 </li>
 </ol>
 </li>
+<li><p>变量提升</p>
+<ul>
+<li>js预编译实现过程：<ul>
+<li>1.js首先扫描var关键字，提前到顶端；</li>
+<li>2.然后扫描function定义，提到var之后</li>
+<li>3.然后再顺序执行</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>输出方式</p>
@@ -647,7 +671,7 @@
 <li><p>函数</p>
 <ul>
 <li>封装的某个功能代码块</li>
-<li>函数有 4 种调用方式。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1.无参数的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionname</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 这里是要执行的代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.有参数的函数 var1,var2 为参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">var1,var2</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 这里是要执行的代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.带有返回值的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x=<span class="number">5</span>;</span><br><span class="line">    <span class="keyword">return</span> x; <span class="comment">// 返回值 5</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> var5 = myFunction() <span class="comment">// 5</span></span><br><span class="line"><span class="comment">// 参数个数</span></span><br><span class="line">    <span class="comment">// arguments .Length</span></span><br></pre></td></tr></table></figure>
+<li>函数有 4 种调用方式。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1.无参数的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionname</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 这里是要执行的代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.有参数的函数 var1,var2 为参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">var1,var2</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 这里是要执行的代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.带有返回值的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x=<span class="number">5</span>;</span><br><span class="line">    <span class="keyword">return</span> x; <span class="comment">// 返回值 5</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> var5 = myFunction() <span class="comment">// 5</span></span><br><span class="line"><span class="comment">// 参数个数</span></span><br><span class="line">    <span class="comment">// arguments .Length</span></span><br><span class="line"><span class="comment">// 一. 函数调用模式</span></span><br><span class="line"><span class="comment">// 如果一个函数，是直接调用</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;;</span><br><span class="line">foo();    <span class="comment">// window</span></span><br><span class="line"><span class="comment">// 二. 对象内部方法调用模式 </span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    foo:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.foo();    <span class="comment">// obj</span></span><br><span class="line"><span class="comment">// 三. 构造函数调用模式</span></span><br><span class="line"><span class="comment">// 构造函数调用模式中：this指向new创建出来的新对象</span></span><br><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line">p.foo();    <span class="comment">// p</span></span><br><span class="line"><span class="comment">// 四. 上下文调用模式，也称借用方法 </span></span><br><span class="line"><span class="comment">// call/apply/bind 可以动态改变this的指向</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -841,7 +865,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/21/javascript/" data-id="ck3bb4syk0023i0uoqcusv6o0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/21/javascript/" data-id="ck3ppk2f7002cawuoriw08n50" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li></ul>
@@ -862,9 +886,9 @@
     </a>
   
   
-    <a href="/2019/11/21/时间/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/11/18/share/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">时间</div>
+      <div class="article-nav-title">资源分享</div>
     </a>
   
 </nav>
@@ -883,7 +907,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS预编译/">CSS预编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex布局/">flex布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html2canvas/">html2canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html快速生成/">html快速生成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http状态码/">http状态码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jq插件/">jq插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ps/">ps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人博客搭建/">个人博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/关于博主/">关于博主</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前后台交互/">前后台交互</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/城市json文件/">城市json文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/域名/">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/客户端/">客户端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间戳/">时间戳</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间格式化/">时间格式化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/端口/">端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笑一个吧/">笑一个吧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机快捷键/">计算机快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源分享/">资源分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域，ajax，网络传输数据格式/">跨域，ajax，网络传输数据格式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目需求/">项目需求</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS预编译/">CSS预编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex布局/">flex布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html2canvas/">html2canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http状态码/">http状态码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jq插件/">jq插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ps/">ps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/个人博客搭建/">个人博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前后台交互/">前后台交互</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单词/">单词</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/城市json文件/">城市json文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/域名/">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/客户端/">客户端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我，她/">我，她</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间戳/">时间戳</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间格式化/">时间格式化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/端口/">端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笑一个吧/">笑一个吧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机快捷键/">计算机快捷键</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源分享/">资源分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域，ajax，网络传输数据格式/">跨域，ajax，网络传输数据格式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目需求/">项目需求</a></li></ul>
     </div>
   </div>
 
@@ -893,7 +917,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li></ul>
     </div>
   </div>
 
@@ -906,11 +930,15 @@
       <ul>
         
           <li>
-            <a href="/2019/11/21/你知道吗/">你知道吗？</a>
+            <a href="/2019/12/02/about/">she and I</a>
           </li>
         
           <li>
-            <a href="/2019/11/21/javascript/">javaScript</a>
+            <a href="/2019/12/01/前端单词/">前端单词</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/23/APK签名笔记/">(no title)</a>
           </li>
         
           <li>
@@ -919,10 +947,6 @@
         
           <li>
             <a href="/2019/11/21/tale/">笑一个吧 (~`_`~)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/18/share/">资源分享</a>
           </li>
         
       </ul>
