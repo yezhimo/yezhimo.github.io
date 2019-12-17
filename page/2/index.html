@@ -65,6 +65,165 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-服务器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/24/服务器/" class="article-date">
+  <time datetime="2019-09-23T16:00:00.000Z" itemprop="datePublished">2019-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/24/服务器/">服务器/客户端</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol start="0">
+<li><p>什么是服务器</p>
+<ul>
+<li>服务器就是通过 <code>安装服务器软件</code>，<code>向外提供服务的计算机</code>。</li>
+<li>根据服务器软件的 <code>功能，名称，安装的系统</code>这些不同的标准，可以划分出不同类型的服务器。</li>
+<li>HTTP服务器主要提供网站浏览服务，可以结合某编程语言进行开发，我们称之为服务器开发。</li>
+<li>服务端的编程语言<ul>
+<li>php、java、.net、Python、Ruby、Perl</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>常见的服务器软件有：</p>
+<ul>
+<li>文件服务器：<ul>
+<li><code>Server-U、FileZilla、VsFTP 等 (FTP是File Transfer Protocol文件传输协议)；</code></li>
+</ul>
+</li>
+<li>数据库服务器：<ul>
+<li><code>oracle、mysql、SQL server、DB2、ACCESS等；</code></li>
+</ul>
+</li>
+<li>邮件服务器：<ul>
+<li><code>Postfix、Sendmail等；</code></li>
+</ul>
+</li>
+<li>HTTP服务器：<ul>
+<li><code>Apache、Nginx、IIS、Tomcat、NodeJS等；</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>服务器类型</p>
+<ul>
+<li>按软件功能类型划分： <ul>
+<li>文件服务器、数据库服务器、邮件服务器、Web服务器等；</li>
+</ul>
+</li>
+<li>按安装操作系统划分： <ul>
+<li>Linux服务器、Windows服务器等；</li>
+</ul>
+</li>
+<li>按应用软件名称划分： <ul>
+<li>Apache服务器、Nginx 服务器、IIS服务器、Tomcat服务器、 mysql服务器、oracle服务器、 Node服务器等；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>什么是客户端</p>
+<ul>
+<li>客户端：<ul>
+<li>安装客户端软件，索取服务一方（向服务器获取）</li>
+<li>电脑，手机，iPad平板安装了客户端软件，可以称之为客户端。</li>
+</ul>
+</li>
+<li>服务端：<ul>
+<li>安装服务端软件，提供服务一方（向客户端提供）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>客户端分类</p>
+   <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">系统划分：IOS端，安卓端，<span class="built_in">window</span></span><br><span class="line">设备划分：手机端，电脑端　</span><br><span class="line">特性划分：浏览器（网页应用），非浏览器（桌面应用）</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一. CS软件（client/server） 客户端+服务器 的应用 <ul>
+<li><code>手机QQ，LOL游戏 , 手机微信</code><ol>
+<li>需要安装，手机、电脑桌面应用</li>
+<li>性能更高效，更稳定，使用更流畅</li>
+<li>开发及维护难度增大</li>
+<li>兼容各种系统平台</li>
+</ol>
+<ul>
+<li>二. bs软件（browser/server） 浏览器+服务器 的应用( 一种特殊的CS 软件)</li>
+</ul>
+</li>
+<li><code>网页QQ，新浪网站，网页地图</code><ol>
+<li>不用安装，运行在浏览器网页应用</li>
+<li>性能相对较低，流畅性弱（依赖浏览器）</li>
+<li>开发维护相对更快</li>
+<li>兼容浏览器</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>网络基础 IP , 域名 , 端口, DNS服务.</p>
+<ul>
+<li>ip<ul>
+<li>IP地址 每个连接在互联网上的电脑主机在网络上的唯一标识（身份证，手机电话号码）</li>
+<li>形式: 一个32位地址(192.168.10.100) </li>
+<li>查看本机IP地址: <code>ifconfig</code></li>
+<li>查看网站IP地址: <code>ping www.baidu.com</code></li>
+</ul>
+</li>
+<li>域名<ul>
+<li>由于IP地址基于数字，不方便记忆，于是便用域名来代替IP地址，域名是一个IP地址的“面具”  </li>
+<li>形式: <code>www.baidu.com</code> </li>
+<li>查看域名对应的IP地址: <code>ping www.baidu.com</code></li>
+</ul>
+</li>
+<li>DNS服务<ul>
+<li>DNS（Domain Name System）网上作为域名和IP地址相互映射的一个分布式数据库， 它能够使用户更方便的通过域名形式访问网站。</li>
+<li>就是指记录IP地址和域名之间对应关系的服务器电脑。 </li>
+<li>DNS寻址:先找本机hosts文件、再找DNS服务器( 专干对应域名IP的活 ) 刷新DNS： ipconfig /flushdns</li>
+</ul>
+</li>
+<li>端口<ul>
+<li><code>端口号是计算机与外界通讯交流的出口，每个端口对应不同的服务。</code></li>
+<li>查看端口占用情况： <code>netstat -an 常见端口号 80、8080、3306、21、22</code></li>
+</ul>
+</li>
+<li>url<ul>
+<li><code>http：//</code> 192.168.199.117:<code>8080</code>/index.html</li>
+<li><code>协议名</code>+ 服务器ip + <code>端口号</code> + 请求文件名称 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/24/服务器/" data-id="ck49nsbv6001v3kuofrnp9fdg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IP/">IP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/域名/">域名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/客户端/">客户端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/端口/">端口</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-vue笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/24/vue笔记/" class="article-date">
@@ -563,169 +722,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/vue笔记/" data-id="ck3ziqmm3001mb8uootn2kz8y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/24/vue笔记/" data-id="ck49nsbv3001s3kuo335pmm27" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-服务器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/24/服务器/" class="article-date">
-  <time datetime="2019-09-23T16:00:00.000Z" itemprop="datePublished">2019-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/24/服务器/">服务器/客户端</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol start="0">
-<li><p>什么是服务器</p>
-<ul>
-<li>服务器就是通过 <code>安装服务器软件</code>，<code>向外提供服务的计算机</code>。</li>
-<li>根据服务器软件的 <code>功能，名称，安装的系统</code>这些不同的标准，可以划分出不同类型的服务器。</li>
-<li>HTTP服务器主要提供网站浏览服务，可以结合某编程语言进行开发，我们称之为服务器开发。</li>
-<li>服务端的编程语言<ul>
-<li>php、java、.net、Python、Ruby、Perl</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>常见的服务器软件有：</p>
-<ul>
-<li>文件服务器：<ul>
-<li><code>Server-U、FileZilla、VsFTP 等 (FTP是File Transfer Protocol文件传输协议)；</code></li>
-</ul>
-</li>
-<li>数据库服务器：<ul>
-<li><code>oracle、mysql、SQL server、DB2、ACCESS等；</code></li>
-</ul>
-</li>
-<li>邮件服务器：<ul>
-<li><code>Postfix、Sendmail等；</code></li>
-</ul>
-</li>
-<li>HTTP服务器：<ul>
-<li><code>Apache、Nginx、IIS、Tomcat、NodeJS等；</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>服务器类型</p>
-<ul>
-<li>按软件功能类型划分： <ul>
-<li>文件服务器、数据库服务器、邮件服务器、Web服务器等；</li>
-</ul>
-</li>
-<li>按安装操作系统划分： <ul>
-<li>Linux服务器、Windows服务器等；</li>
-</ul>
-</li>
-<li>按应用软件名称划分： <ul>
-<li>Apache服务器、Nginx 服务器、IIS服务器、Tomcat服务器、 mysql服务器、oracle服务器、 Node服务器等；</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>什么是客户端</p>
-<ul>
-<li>客户端：<ul>
-<li>安装客户端软件，索取服务一方（向服务器获取）</li>
-<li>电脑，手机，iPad平板安装了客户端软件，可以称之为客户端。</li>
-</ul>
-</li>
-<li>服务端：<ul>
-<li>安装服务端软件，提供服务一方（向客户端提供）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>客户端分类</p>
-   <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">系统划分：IOS端，安卓端，<span class="built_in">window</span></span><br><span class="line">设备划分：手机端，电脑端　</span><br><span class="line">特性划分：浏览器（网页应用），非浏览器（桌面应用）</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>一. CS软件（client/server） 客户端+服务器 的应用 <ul>
-<li><code>手机QQ，LOL游戏 , 手机微信</code><ol>
-<li>需要安装，手机、电脑桌面应用</li>
-<li>性能更高效，更稳定，使用更流畅</li>
-<li>开发及维护难度增大</li>
-<li>兼容各种系统平台</li>
-</ol>
-<ul>
-<li>二. bs软件（browser/server） 浏览器+服务器 的应用( 一种特殊的CS 软件)</li>
-</ul>
-</li>
-<li><code>网页QQ，新浪网站，网页地图</code><ol>
-<li>不用安装，运行在浏览器网页应用</li>
-<li>性能相对较低，流畅性弱（依赖浏览器）</li>
-<li>开发维护相对更快</li>
-<li>兼容浏览器</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>网络基础 IP , 域名 , 端口, DNS服务.</p>
-<ul>
-<li>ip<ul>
-<li>IP地址 每个连接在互联网上的电脑主机在网络上的唯一标识（身份证，手机电话号码）</li>
-<li>形式: 一个32位地址(192.168.10.100) </li>
-<li>查看本机IP地址: <code>ifconfig</code></li>
-<li>查看网站IP地址: <code>ping www.baidu.com</code></li>
-</ul>
-</li>
-<li>域名<ul>
-<li>由于IP地址基于数字，不方便记忆，于是便用域名来代替IP地址，域名是一个IP地址的“面具”  </li>
-<li>形式: <code>www.baidu.com</code> </li>
-<li>查看域名对应的IP地址: <code>ping www.baidu.com</code></li>
-</ul>
-</li>
-<li>DNS服务<ul>
-<li>DNS（Domain Name System）网上作为域名和IP地址相互映射的一个分布式数据库， 它能够使用户更方便的通过域名形式访问网站。</li>
-<li>就是指记录IP地址和域名之间对应关系的服务器电脑。 </li>
-<li>DNS寻址:先找本机hosts文件、再找DNS服务器( 专干对应域名IP的活 ) 刷新DNS： ipconfig /flushdns</li>
-</ul>
-</li>
-<li>端口<ul>
-<li><code>端口号是计算机与外界通讯交流的出口，每个端口对应不同的服务。</code></li>
-<li>查看端口占用情况： <code>netstat -an 常见端口号 80、8080、3306、21、22</code></li>
-</ul>
-</li>
-<li>url<ul>
-<li><code>http：//</code> 192.168.199.117:<code>8080</code>/index.html</li>
-<li><code>协议名</code>+ 服务器ip + <code>端口号</code> + 请求文件名称 </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/服务器/" data-id="ck3ziqmmb001rb8uoigkatl2l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IP/">IP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/域名/">域名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/客户端/">客户端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/端口/">端口</a></li></ul>
 
     </footer>
   </div>
@@ -787,7 +787,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/npm/" data-id="ck3ziqmkn000cb8uo7ub2hvu3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/24/npm/" data-id="ck49nsbu3000r3kuonw3w6412" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
@@ -941,7 +941,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/felx布局/" data-id="ck3ziqml5000rb8uoi87186wf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/23/felx布局/" data-id="ck49nsbss00063kuoyiyil0ea" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flex布局/">flex布局</a></li></ul>
@@ -1034,7 +1034,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/14/http状态码/" data-id="ck3ziqmki0006b8uoi5cefsum" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/14/http状态码/" data-id="ck49nsbtp000j3kuoylmu4zkn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http状态码/">http状态码</a></li></ul>
@@ -1337,7 +1337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/14/前后台交互/" data-id="ck3ziqmm5001nb8uoc4c64pyq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/14/前后台交互/" data-id="ck49nsbv4001t3kuoku84ff4k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前后台交互/">前后台交互</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域，ajax，网络传输数据格式/">跨域，ajax，网络传输数据格式</a></li></ul>
@@ -1435,6 +1435,7 @@
 <li><code>CordovaProject</code> 是项目的目录名称</li>
 <li><code>io.cordova.hellocordova</code> 是默认的反向域值。包名</li>
 <li><code>CordovaApp</code> 是您应用的标题, 如 (微信)</li>
+<li>注意: <code>项目不能位于中文路径下</code></li>
 </ul>
 </li>
 </ul>
@@ -1460,7 +1461,8 @@
 </ul>
 </li>
 <li>检查是否满足构建平台的要求<ul>
-<li><code>cordova requirements</code></li>
+<li><code>cordova requirements</code> <figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">示例:</span><br><span class="line"></span><br><span class="line">Requirements<span class="built_in"> check </span>results for android:</span><br><span class="line">Java JDK: installed .</span><br><span class="line">Android SDK: installed</span><br><span class="line">Android target: installed android-19,android-21,android-22,android-23,Google Inc.:Google APIs:19,Google Inc.:Google APIs (x86 System Image):19,Google Inc.:Google APIs:23</span><br><span class="line">Gradle: installed</span><br><span class="line"></span><br><span class="line">Requirements<span class="built_in"> check </span>results for ios:</span><br><span class="line">Apple OS X:<span class="built_in"> not </span>installed</span><br><span class="line">Cordova tooling for iOS requires Apple OS X</span><br><span class="line">Error: Some of requirements<span class="built_in"> check </span>failed</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
@@ -1481,10 +1483,6 @@
 </li>
 <li>ios<ul>
 <li>使用 xcode 打包</li>
-</ul>
-</li>
-<li>tips<ul>
-<li><code>项目不能位于中文路径下</code></li>
 </ul>
 </li>
 </ul>
@@ -1603,7 +1601,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/10/cordova/" data-id="ck3ziqmm1001kb8uocboyroi6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/10/cordova/" data-id="ck49nsbuh00133kuo7w8ca0nf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cordova/">cordova</a></li></ul>
@@ -1683,7 +1681,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/10/图片保存/" data-id="ck3ziqml2000nb8uou4ss2kii" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/10/图片保存/" data-id="ck49nsbu9000y3kuoaozvevxv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html2canvas/">html2canvas</a></li></ul>
@@ -1695,9 +1693,9 @@
 
 
   
-    <article id="post-android" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-项目需求" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/08/android/" class="article-date">
+    <a href="/2019/09/08/项目需求/" class="article-date">
   <time datetime="2019-09-07T16:00:00.000Z" itemprop="datePublished">2019-09-08</time>
 </a>
     
@@ -1709,7 +1707,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/08/android/">android</a>
+      <a class="article-title" href="/2019/09/08/项目需求/">项目需求</a>
     </h1>
   
 
@@ -1717,25 +1715,213 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>准备环境</p>
+        <ol start="0">
+<li><p>需要的项目资料说明</p>
 <ul>
-<li>java 运行环境 JRE</li>
-<li>java JDK</li>
-<li>Android SDK</li>
-<li>Android Studio</li>
+<li><p>项目名称</p>
+</li>
+<li><p>app</p>
+<ul>
+<li><p>app图标</p>
+<ul>
+<li>png格式图片</li>
+<li>大小 1024*1024</li>
+</ul>
+</li>
+<li><p>app启动图</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>app上架</p>
+<ul>
+<li>app名称</li>
+<li>软著扫描件</li>
+<li>ios证书</li>
+<li>app简介</li>
+<li>app描述</li>
+<li>app图标</li>
+<li>app截图</li>
+<li>app安装包</li>
+<li>app测试账号</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>要做的平台</p>
+<ul>
+<li><p>网站</p>
+<ul>
+<li>pc</li>
+<li>移动端</li>
+</ul>
+</li>
+<li><p>微信公众号</p>
+</li>
+<li><p>微信小程序</p>
+</li>
+<li><p>app</p>
+<ul>
+<li>种类<ul>
+<li>webapp</li>
+<li>原生app</li>
+<li>混合app</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>需要的功能</p>
+<ul>
+<li><p>用户模块</p>
+<ul>
+<li>注册</li>
+<li>登录</li>
+<li>忘记密码</li>
+<li>修改用户信息</li>
+<li>获取用户信息</li>
+</ul>
+</li>
+<li><p>商城模块</p>
+<ul>
+<li><p>店铺列表</p>
+</li>
+<li><p>商品列表</p>
+</li>
+<li><p>商品详情</p>
+<ul>
+<li>商品图片</li>
+<li>商品名字</li>
+<li>商品描述</li>
+<li>商品规格</li>
+<li>商品颜色</li>
+<li>商品类型<ul>
+<li>普通商品</li>
+<li>特价商品</li>
+<li>活动商品</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>我的订单</p>
+<ul>
+<li><p>订单状态</p>
+<ol start="0">
+<li><p>全部</p>
+</li>
+<li><p>待付款</p>
+<ul>
+<li>取消订单</li>
+<li>订单详情</li>
+</ul>
+</li>
+<li><p>待发货</p>
+<ul>
+<li>取消订单</li>
+<li>订单详情</li>
+</ul>
+</li>
+<li><p>待收货</p>
+<ul>
+<li>查看物流</li>
+<li>订单详情</li>
+</ul>
+</li>
+<li><p>待评价</p>
+<ul>
+<li>评价</li>
+<li>删除订单</li>
+</ul>
+</li>
+<li><p>交易成功</p>
+<ul>
+<li>删除订单</li>
+<li>订单详情</li>
+</ul>
+</li>
+<li><p>交易关闭</p>
+<ul>
+<li>删除订单</li>
+<li>订单详情</li>
+</ul>
+</li>
+<li><p>退款/售后</p>
+<ul>
+<li>仅退款<ul>
+<li>退款成功</li>
+<li>退款中</li>
+<li>退款失败</li>
+</ul>
+</li>
+<li>退货+退款<ul>
+<li>退款成功</li>
+<li>退款失败</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>订单流程</p>
+<ol>
+<li>用户生成订单&gt;等待用户付款</li>
+<li>用户付款&gt;等待商家发货</li>
+<li>商家发货&gt;等待快递揽收&gt;快递揽收&gt;配送中</li>
+<li>用户收到快递&gt;用户确认收货<ul>
+<li>超过 规定时间 用户为确认收货&gt;</li>
 </ul>
 </li>
 <li></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>订单详情</p>
+</li>
+</ul>
+</li>
+<li><p>家政模块</p>
+<ul>
+<li>我的订单<ul>
+<li>订单状态<ol start="0">
+<li>全部</li>
+<li>待报价</li>
+<li>待选择</li>
+<li>待服务</li>
+<li>服务中</li>
+<li></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>订单流程</li>
+</ul>
+</li>
+<li><p>外卖</p>
+<ul>
+<li>我的订单<ol start="0">
+<li>全部</li>
+<li>评价</li>
+<li>退款</li>
+</ol>
+</li>
+<li>订单流程<br>  - </li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/08/android/" data-id="ck3ziqmk80002b8uosadsmncv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/08/项目需求/" data-id="ck49nsbuf00113kuo5j3cclkm" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目需求/">项目需求</a></li></ul>
 
     </footer>
   </div>
@@ -1853,7 +2039,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/08/markdown文档/" data-id="ck3ziqmks000eb8uomv7qov9d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/08/markdown文档/" data-id="ck49nsbtz000n3kuozq24oydn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
@@ -1918,11 +2104,11 @@
           </li>
         
           <li>
-            <a href="/2019/11/21/tale/">笑一个吧 (~`_`~)</a>
+            <a href="/2019/11/21/javascript/">javaScript</a>
           </li>
         
           <li>
-            <a href="/2019/11/21/你知道吗/">你知道吗？</a>
+            <a href="/2019/11/21/时间/">时间</a>
           </li>
         
       </ul>
